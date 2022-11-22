@@ -1,0 +1,5 @@
+
+.btn-bg-blue{
+    background-color: var(--blue-color-light);
+    color: var(--white-color);
+}

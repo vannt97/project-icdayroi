@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{~/css/components/header.css}">
+
+<div th:fragment="header" class="header">
+    <div class="header-wellcome-wrapper">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-8">
+                    Thế giới linh kiện điện tử, ic các loại, atmega, stm, ic 8051, ic 78xx, ic 74xx, ic nguồn, arduino, module ...
+                </div>
+                <div class="col-4">
+                    <a  href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a  href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a  href=""><i class="fa-brands fa-google"></i></a>
+                    <a  href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="header-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <a class="header-main-left" href="/">
+                        <img th:src="@{~/images/logo-2.png}" alt="logo-icdauroi"/>
+                    </a>
+                </div>
+                <div class="d-none d-md-block col-7 col-md-5 col-lg-6">
+                    <div class="header-main-center">
+                        <p>Arduino, module, nguồn, cảm biến, ic...</p>
+                        <div>
+                            <input placeholder="Nhập từ khóa tìm kiếm">
+                            <button class="btn-bg-blue">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-2 col-md-4 col-lg-3">
+                    <div class="header-main-right">
+                        <a href="#">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>Đăng nhập</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Giỏ hàng</span>
+                            <div class="numbers-item-in-cart header-numbers-item">0</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-navbar">
+        <div class="header-navbar-wrapper">
+                <nav class="navbar navbar-expand-md">
+                    <div class="container-md container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <a class="header-navbar-cart" href="/">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <div class="numbers-item-in-cart">0</div>
+                        </a>
+                        <div class="collapse navbar-collapse" id="headerNavbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#"><div><i class="fa-sharp fa-solid fa-house-chimney"></i> TRANG CHỦ</div></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-none d-md-block" href="/products"  aria-expanded="false">
+                                        SẢN PHẨM
+                                    </a>
+                                    <div class="nav-link dropdown-toggle d-md-none d-flex" data-bs-toggle="dropdown"  aria-expanded="false">
+                                        <a id="header-navbar-link-all-product" href="/san-pham">SẢN PHẨM</a>
+                                    </div>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">ARDUINO</a></li>
+                                        <li><a class="dropdown-item" href="#">RASPBERRY PI</a></li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+                                            MODULE
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-item-dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="/">Camera</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="/">Am thanh & loa</a>
+                                                </li>
+                                            </ul></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CẮT LASER</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">BLOG</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">GIỚI THIỆU</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">LIÊN HỆ</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-navbar-item">
+                            <div class="">
+                                <i class="fa-solid fa-phone me-1"></i>
+                                Hotline :
+                            </div>
+                            <a href="tel: 0374255776">0374255776</a>
+                        </div>
+                    </div>
+                </nav>
+        </div>
+    </div>
+
+</div>
+<script th:src="@{~/js/components/header.js}"></script>
+</html>

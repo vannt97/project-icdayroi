@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<!--    <title th:replace = "index :: title">Home</title>-->
+    <th:block th:insert="~{index :: meta}"></th:block>
+    <title>Home</title>
+    <th:block th:insert="~{index :: link}"></th:block>
+    <th:block th:insert="~{layouts/header :: link}"></th:block>
+    <link rel="stylesheet" th:href="@{~/css/pages/home.css}"/>
+</head>
+<body>
+    <header th:replace="layouts/header :: header"></header>
+
+    <footer th:replace="layouts/footer :: footer"></footer>
+    <th:block th:insert="~{index :: body/script}"></th:block>
+    <th:block th:insert="~{layouts/header :: script}"></th:block>
+</body>
+</html>
