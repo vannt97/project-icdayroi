@@ -4,8 +4,106 @@
 
 <body>
 
-<div th:fragment="footer" class="footer">
-    &copy; 2011 The Good Thymes Virtual Grocery
+<div th:fragment="footer" class="footer py-4 border-top bg-black-opacity">
+    <div class="container px-0">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 text-black">
+                <h5>HỘ KINH DOANH LINH KIỆN ĐIỆN TỬ IC ĐÂY RỒI</h5>
+                <p>MST 0314342572 được cấp ngày 04/11/2017 do Sở KH và ĐT TP HCM cấp
+                    <br>
+                    Hotline: 0385593358
+                    <br>
+                    Email: icdayroi@gmail.com
+                    <br>
+                    Địa chỉ: 04 Đường số 7, Khu phố 3, P. Linh Trung, Q. Thủ Đức, Tp. HCM
+                    <br>
+                    Người đại diện theo pháp luật: Cao Thị Ngọc Nhung</p>
+                <p class="text-danger">
+                    <b>Thời gian làm việc </b> <br>
+                    T2 - T6 : Sáng 7h30 > 12h00 : Chiều 13h30 > 20h00
+                    <br>
+                    T7 - CN: Sáng 8h00 > 12h00 : Chiều 13h30 > 17h00
+                </p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 text-black">
+                <h5 class="fw-bold">CHÍNH SÁCH MUA HÀNG</h5>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Chính sách bảo hành, đổi trả
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Chính sách bảo mật thông tin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Chính sách giao nhận và thanh toán
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Hướng dẫn mua hàng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Đăng ký thành viên
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+                <iframe src="https://goo.gl/maps/7GKAuCd4HmfrQnCm8" title="Facebook van trong"></iframe>
+            </div>
+        </div>
+        <div class="row border-top text-black py-3">
+            <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                <h6> <b>HỖ TRỢ THANH TOÁN</b> </h6>
+                <div>
+                    <img th:src="@{/images/payment-1.png}" alt="payment">
+                    <img th:src="@{/images/payment-2.webp}" alt="payment">
+                    <img th:src="@{/images/payment-3.webp}" alt="payment">
+                    <img th:src="@{/images/payment-4.webp}" alt="payment">
+                    <img th:src="@{/images/payment-5.webp}" alt="payment">
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                <p class="m-0"> <b>GIẢI ĐÁP THẮC MẮC</b> </p>
+                <div class="d-flex">
+                    <div class="d-flex align-items-center pe-3 border-end ">
+                        <img th:src="@{/images/tuvan.webp}" alt="tuvan" class="me-2" style="width: 33px; height: 33px">
+                        <p class="m-0">Tư vấn miễn phí (24/7) <br>
+                            <a class="text-danger fw-bold fs-4" href="tel:0374255776">
+                                0374255776
+                            </a>
+                        </p>
+                    </div>
+                    <div class="px-3">
+                        <p class="m-0">Góp ý, phản ánh (8h00 - 20h00) <br>
+                            <a href="tel:0374255776" class="fw-bold text-danger fs-4">0374255776</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <h5 class="fw-bold">CỬA HÀNG IC ĐÂY RỒI</h5>
+            </div>
+            <div class="col-12 col-lg-5 text-black mt-3">
+                <p>Ngân hàng Vietinbank chi nhánh Bình Thới, TP.HCM - Tên: Bùi Xuân Quang - STK: 105 002 822 030</p>
+                <p>Ngân hàng VietcomBank chi nhánh Thủ Đức, TP.HCM - Tên: Cao Thị Ngọc Nhung - STK: 0381 000 516 975</p>
+            </div>
+            <div class="col-12 col-lg-5 mt-3">
+                <p>Địa chỉ: 4 Đường số 7, P. Linh Trung, Q. Thủ Đức, TP.HCM (Cạnh số nhà 113 đường Hoàng Diệu 2)</p>
+                <p>Điện thoại: (028) 62700104 - 038 559 3358 - Email: icdayroi@gmail.com</p>
+            </div>
+            <div class="col-12">
+                <img th:src="@{/images/bocongthuong.webp}">
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

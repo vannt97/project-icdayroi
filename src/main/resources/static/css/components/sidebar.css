@@ -1,0 +1,75 @@
+.sidebar-title{
+    background-color: var(--blue-color-light);
+    padding: 0.2rem 0;
+}
+.sidebar-title > a,
+.sidebar-title > span{
+    display: block;
+    border-bottom: 2px dashed var(--white-color);
+    border-top: 2px dashed var(--white-color);
+    padding: var(--p-1);
+    color: var(--white-color);
+    font-weight: bold;
+}
+.sidebar-title > a > i{
+    margin-right: var(--m-1);
+}
+
+.sidebar-content > li{
+    border-bottom: 2px dashed var(--blue-color-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+.sidebar-content > li.dropdown-edit.show .sidebar-content-child{
+    display: block;
+}
+.sidebar-content > li.dropdown-edit > a{
+    pointer-events: none;
+}
+.sidebar-content > li:last-child{
+    border-bottom: 2px solid var(--blue-color-dark);
+}
+.sidebar-content > li > a{
+    padding: var(--p-1);
+    color: var(--black-color);
+    display: block;
+    padding-right: 0;
+}
+.sidebar-content > li:hover > a{
+    color: var(--blue-color-light);
+}
+.sidebar-content > li > a > i{
+    color: var(--blue-color-light);
+    margin-right: var(--m-0-5);
+}
+.sidebar-content > li > i{
+    margin-right: var(--m-1);
+}
+.sidebar-content-child{
+    width: 100%;
+    display: none;
+}
+.sidebar-content-child li{
+    border-top: 1px dashed;
+}
+.sidebar-content-child li:first-child{
+    border-top: 1px solid var(--blue-color-dark);
+}
+.sidebar-content-child li a{
+    padding: var(--p-1) var(--p-3);
+    display: block;
+}
+
+.sidebar-support-icon{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: var(--white-color);
+}

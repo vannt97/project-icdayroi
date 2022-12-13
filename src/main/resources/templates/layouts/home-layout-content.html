@@ -1,0 +1,13 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:fragment="home-layout-content" class="container">
+    <div class="row pb-3">
+        <aside class="d-none d-lg-block col-lg-4 col-xl-3 ps-0">
+            <div th:replace="this :: sidebar"></div>
+        </aside>
+        <article class="col-12 col-lg-8 col-xl-9 pe-0">
+            <div th:replace="this :: content"></div>
+        </article>
+    </div>
+</div>
+</html>

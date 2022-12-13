@@ -1,20 +1,54 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head th:fragment="index_head">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{~/css/vendor/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{~/css/vendor/fontawesome/all.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/vendor/slick.css}">
     <link rel="stylesheet" th:href="@{~/css/components/button.css}">
+    <link rel="stylesheet" th:href="@{~/css/components/header.css}">
     <link rel="stylesheet" th:href="@{~/css/app.css}">
-    <title>Index</title>
+    <link rel="stylesheet" th:href="@{~/css/components/sidebar.css}">
+    <link rel="stylesheet" th:href="@{~/css/plugins/modal-cart.css}">
+    <link rel="stylesheet" th:href="@{~/css/plugins/modal-add-cart-success.css}">
 </head>
-<body>
+<body >
+    <section th:fragment="index_body">
+        <section id="index-wrapper">
+            <header th:replace="layouts/header :: header">
+            </header>
+            <div th:replace="this :: content_index(type='none')" >
+
+            </div>
+            <footer th:replace="layouts/footer :: footer"></footer>
+        </section>
+    </section>
+
+    <div class="phone-call d-block d-sm-none">
+        <a href="tel:+84374255776">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+    <div class="message-fb d-block d-sm-none">
+        <a href="https://www.facebook.com/profile.php?id=100040857703494" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+    </div>
+    <div id="go-to-top">
+        <button onclick="topFunction()" id="btn-go-to-top" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
+    </div>
 
     <script src="http://localhost:35729/livereload.js"></script>
     <script th:src="@{~/js/vendor/jquery-3.6.1.min.js}"></script>
     <script th:src="@{~/js/vendor/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/vendor/slick.min.js}"></script>
+    <script th:src="@{~/js/components/header.js}"></script>
+    <script th:src="@{~/js/index.js}"></script>
+    <script th:src="@{~/js/components/sidebar.js}"></script>
+    <script th:src="@{~/js/plugins/modal-cart.js}"></script>
+    <script th:src="@{~/js/plugins/modal-add-cart-success.js}"></script>
 </body>
 </html>

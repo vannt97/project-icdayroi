@@ -4,7 +4,125 @@
 
 
 <div th:fragment="sidebar" class="sidebar">
-    header
+    <div class="sidebar-title">
+        <a href="/">
+            <i class="fa-solid fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+        </a>
+    </div>
+    <ul class="sidebar-content mb-3">
+        <li>
+            <a href="/">
+                <i class="fa-solid fa-caret-right"></i>
+                RASPEBBRY PI
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <i class="fa-solid fa-caret-right"></i>
+                ARDUINO
+            </a>
+        </li>
+        <li class="dropdown-edit">
+            <a href="/">
+                <i class="fa-solid fa-caret-right"></i>
+                MẠCH NẠP & KÍT PHÁT TRIỂN
+            </a>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul class="sidebar-content-child" >
+                <li>
+                    <a href="/">Mạch nạp</a>
+                </li>
+                <li>
+                    <a href="/">Kít phát triển</a>
+                </li>
+            </ul>
+        </li>
+        <li class="dropdown-edit">
+            <a href="/">
+                <i class="fa-solid fa-caret-right"></i>
+                DIODE & ZENER
+            </a>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul class="sidebar-content-child" >
+                <li>
+                    <a href="/">Diode DIP</a>
+                </li>
+                <li>
+                    <a href="/">Diode SMD</a>
+                </li>
+                <li>
+                    <a href="/">Zener</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="sidebar-support bg-white mb-3">
+        <div class="sidebar-title">
+                            <span>
+                                HỖ TRỢ TRỰC TUYẾN
+                            </span>
+        </div>
+        <div class="row align-items-center px-4 py-3">
+            <div class="col-2 text-center d-flex align-items-center px-0 justify-content-center">
+                <div class="sidebar-support-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            </div>
+            <div class="col-10 px-0 text-black mb-2">
+                <b class="">Tư vấn bán hàng</b>
+                <p class="m-0">
+                    Mr. Van: <b>037455776</b>
+                </p>
+            </div>
+            <div class="col-2 text-center d-flex align-items-center px-0 justify-content-center">
+                <div class="sidebar-support-icon"> <i class="fa-solid fa-phone-volume"></i></div>
+            </div>
+            <div class="col-10 px-0 text-black mb-2">
+                <b>Tư vấn Tư vấn kỹ thuật</b>
+                <p class="m-0">
+                    Mr. Van: <b>037455776</b>
+                </p>
+            </div>
+            <div class="col-2 text-center d-flex align-items-center px-0 justify-content-center">
+                <div class="sidebar-support-icon"><i class="fa-solid fa-envelope"></i></div>
+            </div>
+            <div class="col-10 px-0 text-black">
+                <b>Email liên hệ</b>
+                <p class="m-0">
+                    hangpro123pm@gmail.com
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-blog bg-white ">
+        <div class="home-main-left-title">
+            <a class="#">
+                TIN TỨC
+            </a>
+        </div>
+        <div class="row p-3">
+            <div class="col-12">
+                <a class="d-block text-black" href="#">
+                    <img class="mb-2 w-100" src="../../static/images/img-blog.png" th:src="@{images/img-blog.png}" alt="img-blog">
+                    <b class="d-block mb-2">
+                        Điện tử cơ bản: Các linh kiện điện tử cơ bản
+                    </b>
+                </a>
+            </div>
+            <div class="col-12">
+                <p><i class="fa-solid fa-user"></i>
+                    <span class="me-2">Bùi Xuân Quang</span>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>25/03/2017</span>
+                </p>
+                <p>
+                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản.  Các   linh kiện điện tử   là các phần tử...
+                    <a class="color-blue-light" href="#">
+                        [Xem thêm]
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
 

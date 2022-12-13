@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" th:href="@{~/css/components/header.css}">
-
 <div th:fragment="header" class="header">
     <div class="header-wellcome-wrapper">
         <div class="container">
@@ -34,6 +32,43 @@
                         <div>
                             <input placeholder="Nhập từ khóa tìm kiếm">
                             <button class="btn-bg-blue">Tìm kiếm</button>
+                            <ul class="header-list-search">
+                                <li>
+                                    <a href="">
+                                        <img th:src="@{/images/product1.webp}">
+                                        <span>Combo gá RC servo MG996, MG995</span>
+                                        <span>50,000đ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img th:src="@{/images/product1.webp}">
+                                        <span>Combo gá RC servo MG996, MG995</span>
+                                        <span>50,000đ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img th:src="@{/images/product1.webp}">
+                                        <span>Combo gá RC servo MG996, MG995</span>
+                                        <span>50,000đ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img th:src="@{/images/product1.webp}">
+                                        <span>Combo gá RC servo MG996, MG995</span>
+                                        <span>50,000đ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img th:src="@{/images/product1.webp}">
+                                        <span>Combo gá RC servo MG996, MG995</span>
+                                        <span>50,000đ</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -43,11 +78,89 @@
                             <i class="fa-solid fa-circle-user"></i>
                             <span>Đăng nhập</span>
                         </a>
-                        <a href="#">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Giỏ hàng</span>
-                            <div class="numbers-item-in-cart header-numbers-item">0</div>
-                        </a>
+                        <div class="cart-header-wrapper">
+                            <a href="#" class="cart-header">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>Giỏ hàng</span>
+                                <div class="numbers-item-in-cart header-numbers-item">0</div>
+                            </a>
+                            <div class="cart-popup">
+                                <ul class="cart-popup-content">
+                                    <li class="cart-list-item">
+                                        <div>
+                                            <a href="#">
+                                                <img th:src="@{~/images/product1.webp}" alt="img"/>
+                                            </a>
+                                            <div>
+                                                <a href="#">
+                                                    Link kien item
+                                                </a>
+                                                <span>40.000d</span>
+                                                <input type="number" name="" id="#" placeholder="1"/>
+                                            </div>
+                                            <button class="cart-item-close">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+
+                                    </li>
+                                    <li class="cart-list-item">
+                                        <div>
+                                            <a href="#">
+                                                <img th:src="@{~/images/product1.webp}" alt="img"/>
+                                            </a>
+                                            <div>
+                                                <a href="#">
+                                                    Link kien item
+                                                </a>
+                                                <span>40.000d</span>
+                                                <input type="number" name="" id="" placeholder="1"/>
+                                            </div>
+                                            <button class="cart-item-close">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+
+                                    </li>
+                                    <li class="cart-list-item">
+                                        <div>
+                                            <a href="#">
+                                                <img th:src="@{~/images/product1.webp}" alt="img"/>
+                                            </a>
+                                            <div>
+                                                <a href="#">
+                                                    Link kien item
+                                                </a>
+                                                <span>40.000d</span>
+                                                <input type="number" name="" id="" placeholder="1"/>
+                                            </div>
+                                            <button class="cart-item-close">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <b class="cart-total-price">
+                                <span>
+                                    Thành tiền
+                                </span>
+                                    <span>
+                                    999.000đ
+                                </span>
+                                </b>
+                                <div class="cart-action">
+                                    <button>
+                                        Giỏ Hàng
+                                    </button>
+                                    <button>
+                                        Đặt Hàng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -73,16 +186,19 @@
                                     <a class="nav-link dropdown-toggle d-none d-md-block" href="/products"  aria-expanded="false">
                                         SẢN PHẨM
                                     </a>
-                                    <div class="nav-link dropdown-toggle d-md-none d-flex" data-bs-toggle="dropdown"  aria-expanded="false">
+                                    <div class="nav-link nav-link-dropdown dropdown-toggle d-md-none d-flex" data-bs-toggle="dropdown"  data-bs-auto-close="false" aria-expanded="false">
                                         <a id="header-navbar-link-all-product" href="/san-pham">SẢN PHẨM</a>
                                     </div>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <ul class="dropdown-menu dropdown-menu-parent" aria-labelledby="navbarDropdownMenuLink">
                                         <li><a class="dropdown-item" href="#">ARDUINO</a></li>
                                         <li><a class="dropdown-item" href="#">RASPBERRY PI</a></li>
                                         <li class="dropdown">
-                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+                                            <a class="dropdown-item dropdown-toggle d-none d-md-block"  aria-expanded="false" href="/">
                                             MODULE
                                             </a>
+                                            <div class="dropdown-item dropdown-toggle d-md-none d-flex" data-bs-toggle="dropdown"  aria-expanded="false">
+                                                <a href="/">MODULE</a>
+                                            </div>
                                             <ul class="dropdown-menu dropdown-item-dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item" href="/">Camera</a>
@@ -119,7 +235,5 @@
                 </nav>
         </div>
     </div>
-
 </div>
-<script th:src="@{~/js/components/header.js}"></script>
 </html>

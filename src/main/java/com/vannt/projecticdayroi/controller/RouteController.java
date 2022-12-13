@@ -13,4 +13,12 @@ public class RouteController {
         modelAndView.setViewName("pages/home");
         return  modelAndView;
     }
+
+    @RequestMapping("category-product")
+    public  ModelAndView categoryProduct(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/category-product");
+        return modelAndView;
+    }
+
 }

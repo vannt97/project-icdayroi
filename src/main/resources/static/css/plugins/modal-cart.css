@@ -1,0 +1,94 @@
+#cart-modal .modal-header{
+    border-bottom: none;
+    display: block;
+}
+#cart-modal .modal-title{
+    color: var(--black-color);
+}
+#cart-modal .modal-title i{
+    color: var(--blue-color-light);
+}
+#cart-modal .modal-title a{
+    color: var(--red-color);
+}
+#cart-modal .modal-header p{
+    margin: 0;
+}
+.cart-modal-head{
+    display: grid;
+    background-color: var(--gray-color-light-2);
+    color: var(--black-color);
+    font-weight: bold;
+    padding: var(--p-1) 0;
+    grid-template-columns: repeat(6,1fr);
+}
+.cart-modal-head > div{
+    padding: 0 var(--p-1);
+}
+.cart-modal-head > div:first-child,
+.cart-modal-row-item{
+    grid-column: 1 / span 3;
+    display: flex;
+    align-items: center;
+}
+.cart-modal-table{
+    max-height: 272px;
+    overflow-x: hidden;
+}
+
+.cart-modal-row{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    padding: var(--p-1) 0;
+    border-bottom: 1px solid;
+}
+.cart-modal-row > *{
+    padding: 0 var(--p-1);
+    display: flex;
+    align-items: center;
+}
+.cart-modal-row-item > a{
+    width: 30%;
+    border: 1px solid;
+    margin-right: 1rem;
+    color: var(--black-color);
+    font-weight: bold;
+}
+.cart-modal-row-item > div > button{
+    display: flex;
+    background-color: transparent;
+    color: var(--gray-color);
+    border: none;
+    width: 100%;
+    padding: 0;
+}
+.cart-modal-row-item > div > button span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: var(--white-color);
+    background-color: var(--gray-color);
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: var(--m-0-5);
+}
+.cart-modal-row-price,
+.cart-modal-row-total{
+    color: var(--blue-color-light);
+    font-weight: bold;
+}
+.cart-modal-amount input{
+    width: 50%;
+}
+#cart-modal .modal-header .btn-close{
+    position: absolute;
+    top: -27px;
+    right: -27px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: var(--white-color);
+    text-align: center;
+    line-height: 25px;
+}

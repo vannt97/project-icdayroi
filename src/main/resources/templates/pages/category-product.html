@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Category Product</title>
+    <!--    <link rel="stylesheet" th:href="@{~/css/pages/home.css}"/>-->
+</head>
+<body>
+    <section th:replace="index :: index_body">
+        <!--  category content  -->
+        <section id="category-product" th:fragment="content_index (type)" th:remove="${type}">
+            <div th:replace="layouts/home-layout-content :: home-layout-content">
+                <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+                <div class="" th:fragment="content">
+                    right
+                </div>
+            </div>
+        </section>
+        <!--  category content  -->
+    </section>
+
+    <th:block th:insert="~{index :: body/div}"></th:block>
+    <th:block th:insert="~{index :: body/script}"></th:block>
+    <!-- script    -->
+    <!--    <script th:src="@{~/js/pages/home.js}"></script>-->
+</body>
+</html>
