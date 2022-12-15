@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="header" class="header">
+<div th:fragment="header" class="header ">
     <div class="header-wellcome-wrapper">
         <div class="container">
             <div class="row w-100">
@@ -96,7 +96,7 @@
                                                     Link kien item
                                                 </a>
                                                 <span>40.000d</span>
-                                                <input type="number" name="" id="#" placeholder="1"/>
+                                                <input type="number" name="" placeholder="1"/>
                                             </div>
                                             <button class="cart-item-close">
                                                 <i class="fa-solid fa-xmark"></i>
@@ -114,7 +114,7 @@
                                                     Link kien item
                                                 </a>
                                                 <span>40.000d</span>
-                                                <input type="number" name="" id="" placeholder="1"/>
+                                                <input type="number" name="" placeholder="1"/>
                                             </div>
                                             <button class="cart-item-close">
                                                 <i class="fa-solid fa-xmark"></i>
@@ -235,5 +235,49 @@
                 </nav>
         </div>
     </div>
+    <div class="header-research-mobile">
+        <input placeholder="Nhap tu khoa tim kiem">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <ul class="header-list-search">
+            <li>
+                <a href="">
+                    <img th:src="@{/images/product1.webp}">
+                    <span>Combo gá RC servo MG996, MG995</span>
+                    <span>50,000đ</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img th:src="@{/images/product1.webp}">
+                    <span>Combo gá RC servo MG996, MG995</span>
+                    <span>50,000đ</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img th:src="@{/images/product1.webp}">
+                    <span>Combo gá RC servo MG996, MG995</span>
+                    <span>50,000đ</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img th:src="@{/images/product1.webp}">
+                    <span>Combo gá RC servo MG996, MG995</span>
+                    <span>50,000đ</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img th:src="@{/images/product1.webp}">
+                    <span>Combo gá RC servo MG996, MG995</span>
+                    <span>50,000đ</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="bg-black-opacity w-100 py-3"></div>
 </div>
 </html>

@@ -20,9 +20,11 @@
         <section id="index-wrapper">
             <header th:replace="layouts/header :: header">
             </header>
-            <div th:replace="this :: content_index(type='none')" >
-
+            <div class="bg-black-opacity">
+                <div th:replace="this :: content_index(type='none')"  >
+                </div>
             </div>
+
             <footer th:replace="layouts/footer :: footer"></footer>
         </section>
     </section>

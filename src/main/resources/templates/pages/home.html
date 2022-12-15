@@ -4,56 +4,14 @@
     <!--  css  -->
     <div th:replace="index :: index_head"></div>
     <title>Home</title>
+    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>
     <link rel="stylesheet" th:href="@{~/css/pages/home.css}"/>
 </head>
 <body>
         <section th:replace="index :: index_body">
             <!--  Home content  -->
-            <div th:fragment="content_index (type)" th:remove="${type}" class="home pt-4">
+            <div th:fragment="content_index (type)" th:remove="${type}" class="homes">
                 <div class="container-md">
-                    <div class="home-research">
-                        <input placeholder="Nhap tu khoa tim kiem">
-                        <button>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                        <ul class="header-list-search">
-                            <li>
-                                <a href="">
-                                    <img th:src="@{/images/product1.webp}">
-                                    <span>Combo gá RC servo MG996, MG995</span>
-                                    <span>50,000đ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img th:src="@{/images/product1.webp}">
-                                    <span>Combo gá RC servo MG996, MG995</span>
-                                    <span>50,000đ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img th:src="@{/images/product1.webp}">
-                                    <span>Combo gá RC servo MG996, MG995</span>
-                                    <span>50,000đ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img th:src="@{/images/product1.webp}">
-                                    <span>Combo gá RC servo MG996, MG995</span>
-                                    <span>50,000đ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img th:src="@{/images/product1.webp}">
-                                    <span>Combo gá RC servo MG996, MG995</span>
-                                    <span>50,000đ</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="home-carousel position-relative">
                         <div>
                             <p>Thời gian làm việc</p>
