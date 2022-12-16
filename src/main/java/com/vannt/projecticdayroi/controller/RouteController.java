@@ -35,4 +35,11 @@ public class RouteController {
         modelAndView.setViewName("pages/search-product");
         return modelAndView;
     }
+
+    @RequestMapping("service-lazer")
+    public ModelAndView serviceLazer(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/service-lazer");
+        return modelAndView;
+    }
 }
