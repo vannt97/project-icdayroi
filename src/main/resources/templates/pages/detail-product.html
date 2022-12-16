@@ -1,0 +1,270 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Detail product</title>
+    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>
+    <link rel="stylesheet" th:href="@{~/css/pages/detail-product.css}"/>
+</head>
+
+<body>
+<section th:replace="index :: index_body">
+
+    <section id="detail-product" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-0 ">
+            <div class="detail-product-name text-black pb-4" >
+                <a href="">Trang chủ</a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <a href="#"><span class="">Ten loai linh kien</span></a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <span class="color-blue-light">Ten loai linh kien detail</span>
+            </div>
+        </div>
+        <div th:replace="layouts/home-layout-content :: home-layout-content">
+            <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+            <div class="detail-product-content" th:fragment="content">
+                <div class="row mb-5">
+                    <div class="col-12 col-md-5 mb-4">
+                        <img class="w-100" th:src="@{~/images/product1.webp}" alt="item">
+                    </div>
+                    <div class="col-12 col-md-7 mb-4">
+                        <h4 class="fw-bold">Pin sạc dự phòng 10000mAh (Sạc nhanh 2 chiều trong suốt)</h4>
+                        <span class="fs-4 color-blue-light mb-3 fw-bold">380.000đ</span>
+                        <span class="d-block text-black">còn hàng</span>
+                        <b class="text-black">Mô tả:</b>
+                        <p class="border-bottom pb-3">
+                            - Pin sạc dự phòng trong suốt sạc nhanh 2 chiều Power Delivery PD 22.5w 10000mAh, hỗ trợ hầu hết các chuẩn sạc nhanh hiện nay, công suất đầu ra lên đến 22.5w, có thể sạc cho hầu...
+                        </p>
+                        <div class="d-flex align-items-center mb-3">
+                            <label class="me-4">
+                                Số lượng
+                            </label>
+                            <input min="1" value="1" type="number" id="typeNumber" class="w-25 form-control" />
+                        </div>
+                        <a href="#" class="d-block d-md-inline btn btn-danger">
+                            Thêm vào giỏ hàng
+                        </a>
+                        <a href="#" class="btn btn-success d-block d-md-none mt-3">
+                            Gọi Điện
+                        </a>
+                    </div>
+                    <div class="col-12 mb-4 detail-product-info">
+                        <div class="detail-product-info-title d-block d-md-none fw-bold py-3 px-5 bg-white d-block d-md-inline-block text-center border-bottom">
+                            <b class="color-blue-light text-uppercase ">Thông tin sản phẩm</b>
+                        </div>
+                        <div class="detail-product-info-title d-none fw-bold py-3 px-5 bg-white d-md-inline-block text-center ">
+                            <b class="color-blue-light text-uppercase ">Thông tin sản phẩm</b>
+                        </div>
+                        <div class="bg-white p-4 ">
+                            - Pin sạc dự phòng trong suốt sạc nhanh 2 chiều Power Delivery PD 22.5w 10000mAh, hỗ trợ hầu hết các chuẩn sạc nhanh hiện nay, công suất đầu ra lên đến 22.5w, có thể sạc cho hầu hết các dòng điện thoại, macbook và laptop hỗ trợ chuẩn sạc PD
+                            - Ngoài ra sản phẩm còn 1 tính năng rất hay đó là hiển thị cả điện áp và dòng sạc cho người dùng biết đang sạc nhanh hay không, và hiển thị phần trăm của pin, dung lượng 10000mAh, có thể thay 4 pin 21700 5000mAh để được dung lượng 20000mAh
+                            - Điện áp ra cực kì ổn định, độ gợn sóng thấp, sạc rất tốt cho các thiệt bị.
+
+                            - Đầu ra gồm 1 cổng Type C, 2 cổng USB Type A, 1 cổng micro và 1 cổng lightning, cổng micro và lightning chỉ hỗ trợ sạc đầu vào, 2 cổng usb type A chỉ hỗ trợ đầu ra và có hỗ trợ sạc nhanh, cổng type C hỗ trợ cả 2 vừa có thể làm đầu vào, vừa có thể làm đầu ra hỗ trợ sạc nhanh 2 chiều, giúp tiết kiệm tối đa thời gian sạc
+                            - Pin dự phòng được thiết kế trong suốt cho người dùng có thể nhìn thấy vi mạch bên trong, rất thích hợp cho những người yêu thích công nghệ.
+
+
+
+                            Tính năng:
+                            - Hỗ trợ các chuẩn sạc nhanh: QC2.0 / QC3.0 / QC3+ / PD2.0 / PD3.0 / PPS / FCP / AFC / SCB...
+
+                            - Hỗ trợ sạc nhanh cho các dòng điện thoại: Iphone, Huawei, Oppo, Vivo, Xiaomi....
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h4 class="fw-bold text-uppercase mb-3 text-black">Sản phẩm liên quan</h4>
+                        <div class="home-main-right-article mb-4">
+                            <div class="row bg-white detail-product-slick">
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 col-xl-3">
+                                    <div class="home-main-product">
+                                        <a href="">
+                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                                            <p>
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span>700.000đ</span>
+                                            <span class="old-price">700.000đ</span>
+                                        </div>
+                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+<script th:src="@{~/js/pages/detail-product.js}"></script>
+</body>
+
+</html>

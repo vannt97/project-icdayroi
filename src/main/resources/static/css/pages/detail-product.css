@@ -1,0 +1,9 @@
+.detail-product-info-title{
+    border-top: 2px solid var(--blue-color-light);
+}
+.detail-product-info > div:last-child{
+}
+
+.detail-product-content .slick-dots{
+    display: none !important;
+}

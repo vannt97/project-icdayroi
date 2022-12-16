@@ -21,4 +21,10 @@ public class RouteController {
         return modelAndView;
     }
 
+    @RequestMapping("detail-product")
+    public  ModelAndView detailProduct(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/detail-product");
+        return modelAndView;
+    }
 }

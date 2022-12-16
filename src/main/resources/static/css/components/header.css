@@ -1,6 +1,5 @@
 .header-wellcome-wrapper{
     border-bottom: 1px solid gray;
-    min-height: 100%;
 }
 .header-wellcome-wrapper div:first-child {
     display: flex;
@@ -11,10 +10,12 @@
     justify-content: flex-end;
 }
 .header-wellcome-wrapper div a{
-    display: inline-block;
     color: var(--gray-color);
     padding: calc(var(--p-1) - 0.5rem)  var(--p-1);
     border-right: 1px solid var(--gray-color);
+    height: 31px;
+    display: flex;
+    align-items: center;
 }
 .header-wellcome-wrapper div a:first-child{
     border-left: 1px solid var(--gray-color) ;
