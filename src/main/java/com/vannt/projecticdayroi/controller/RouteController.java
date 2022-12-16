@@ -1,6 +1,7 @@
 package com.vannt.projecticdayroi.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,6 +26,13 @@ public class RouteController {
     public  ModelAndView detailProduct(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("pages/detail-product");
+        return modelAndView;
+    }
+
+    @RequestMapping("search-product")
+    public ModelAndView searchProduct(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/search-product");
         return modelAndView;
     }
 }
