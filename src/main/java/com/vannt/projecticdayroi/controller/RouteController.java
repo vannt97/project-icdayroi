@@ -56,4 +56,11 @@ public class RouteController {
         modelAndView.setViewName("pages/blog-detail");
         return modelAndView;
     }
+
+    @RequestMapping("gioi-thieu")
+    public ModelAndView gioiThieu(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/gioi-thieu");
+        return modelAndView;
+    }
 }
