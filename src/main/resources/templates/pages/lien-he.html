@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+    <!--  css  -->
+    <div th:replace="index :: index_head"></div>
+    <title>Lien he</title>
+<!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+    <link rel="stylesheet" th:href="@{~/css/pages/lien-he.css}"/>
+</head>
+<body>
+<section th:replace="index :: index_body">
+    <section id="lien-he" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-0 ">
+            <div class="detail-product-name text-black pb-4" >
+                <a href="">Trang chủ</a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <span>
+                    Liên hệ
+                </span>
+
+            </div>
+        </div>
+        <div class="container  text-black">
+            <h3 class="fw-bold">
+                LIÊN HỆ
+            </h3>
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <form>
+                        <!-- Name input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form4Example1">Name</label>
+
+                            <input type="text" id="form4Example1" class="form-control" />
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form4Example2">Email address</label>
+
+                            <input type="email" id="form4Example2" class="form-control" />
+                        </div>
+
+                        <!-- Message input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form4Example3">Message</label>
+                            <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                        </div>
+
+                        <!-- Checkbox -->
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <iframe class="w-100" src="https://goo.gl/maps/gLTBmthv9ouMcbuF9"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+
+
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+<script th:src="@{~/js/pages/lien-he.js}"></script>
+</body>
+
+
+
+</html>

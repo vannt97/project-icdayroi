@@ -63,4 +63,11 @@ public class RouteController {
         modelAndView.setViewName("pages/gioi-thieu");
         return modelAndView;
     }
+
+    @RequestMapping("lien-he")
+    public ModelAndView lienHe(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/lien-he");
+        return modelAndView;
+    }
 }
