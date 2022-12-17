@@ -1,0 +1,13 @@
+#blog-detail .sidebar > .sidebar-title:first-child{
+    display: none;
+}
+#blog-detail .sidebar-content{
+    display: none;
+}
+#blog-detail .sidebar-blogs{
+    display: block;
+}
+.blog-detail-comments-icon{
+    width: 100px;
+    height: 100px;
+}

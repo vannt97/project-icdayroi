@@ -1,0 +1,9 @@
+#blog .sidebar > .sidebar-title:first-child{
+    display: none;
+}
+#blog .sidebar-content{
+    display: none;
+}
+#blog .sidebar-blogs{
+    display: block;
+}

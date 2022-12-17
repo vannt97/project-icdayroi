@@ -42,4 +42,18 @@ public class RouteController {
         modelAndView.setViewName("pages/service-lazer");
         return modelAndView;
     }
+
+    @RequestMapping("blog")
+    public ModelAndView blog(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/blog");
+        return modelAndView;
+    }
+
+    @RequestMapping("blog-detail")
+    public ModelAndView blogDetail(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/blog-detail");
+        return modelAndView;
+    }
 }

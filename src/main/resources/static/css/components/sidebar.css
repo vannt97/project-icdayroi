@@ -63,7 +63,9 @@
     padding: var(--p-1) var(--p-3);
     display: block;
 }
-
+.sidebar-blogs{
+    display: none;
+}
 .sidebar-support-icon{
     width: 30px;
     height: 30px;

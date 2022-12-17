@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Blog detail</title>
+<!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+    <link rel="stylesheet" th:href="@{~/css/pages/blog-detail.css}"/>
+</head>
+<body>
+<section th:replace="index :: index_body">
+    <section id="blog-detail" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-lg-0 px-3 ">
+            <div class="category-product-name text-black pb-4" >
+                <a href="">Trang chủ</a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <a href="">Tin tuc</a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <span class="color-blue-light">detail tin tuc</span>
+            </div>
+            <div th:replace="layouts/home-layout-content :: home-layout-content">
+                <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+                <div class="blog-detail-content text-black" th:fragment="content">
+                    <img class="w-75 mb-3" th:src="@{~/images/img-blog.png}" alt="img blog"/>
+                    <h4 class="fs-4 fw-bold">Điện tử cơ bản: Các linh kiện điện tử cơ bản</h4>
+                    <p class="blog-detail-author"><i class="fa-solid fa-user"></i>
+                        <span class="me-2">Bùi Xuân Quang</span>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>25/03/2017</span>
+                    </p>
+                    <div class="mb-4">
+                        noi dung
+                    </div>
+                    <div class="blog-detail-comments">
+                        <div class="row mb-4">
+                            <div class="col-12 d-flex justify-content-between">
+                                <span><b>Tags :</b>  test</span>
+                                <div>
+                                    <span>Share:</span>
+                                    <a href="#" class="ms-3"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#" class="ms-3"><i class="fa-brands fa-google"></i></a>
+                                    <a class="ms-3" href="#"><i class="fa-brands fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Bình Luận</h4>
+                        <div class="row">
+                            <div class="col-12 d-flex border-bottom py-3">
+                                <img class="blog-detail-comments-icon" th:src="@{~/images/img-blog.png}" alt="avatar"/>
+                                <div class="ms-3">
+                                    <p>Name</p>
+                                    <p>Ngay binh luan 20/12/2020</p>
+                                    <p>
+                                        noi dung binh luan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex border-bottom py-3">
+                                <img class="blog-detail-comments-icon" th:src="@{~/images/img-blog.png}" alt="avatar"/>
+                                <div class="ms-3">
+                                    <p>Name</p>
+                                    <p>Ngay binh luan 20/12/2020</p>
+                                    <p>
+                                        noi dung binh luan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex border-bottom py-3">
+                                <img class="blog-detail-comments-icon" th:src="@{~/images/img-blog.png}" alt="avatar"/>
+                                <div class="ms-3">
+                                    <p>Name</p>
+                                    <p>Ngay binh luan 20/12/2020</p>
+                                    <p>
+                                        noi dung binh luan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex border-bottom py-3">
+                                <img class="blog-detail-comments-icon" th:src="@{~/images/img-blog.png}" alt="avatar"/>
+                                <div class="ms-3">
+                                    <p>Name</p>
+                                    <p>Ngay binh luan 20/12/2020</p>
+                                    <p>
+                                        noi dung binh luan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex border-bottom py-3">
+                                <img class="blog-detail-comments-icon" th:src="@{~/images/img-blog.png}" alt="avatar"/>
+                                <div class="ms-3">
+                                    <p>Name</p>
+                                    <p>Ngay binh luan 20/12/2020</p>
+                                    <p>
+                                        noi dung binh luan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="py-3">Viết bình luận</h4>
+                        <div>
+                            <form>
+                                <!-- Name input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form4Example1">Name</label>
+                                    <input type="text" id="form4Example1" class="form-control" />
+                                </div>
+
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form4Example2">Email address</label>
+                                    <input type="email" id="form4Example2" class="form-control" />
+                                </div>
+
+                                <!-- Message input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form4Example3">Message</label>
+
+                                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</body>
+</html>
