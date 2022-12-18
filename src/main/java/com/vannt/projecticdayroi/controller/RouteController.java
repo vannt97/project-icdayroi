@@ -70,4 +70,11 @@ public class RouteController {
         modelAndView.setViewName("pages/lien-he");
         return modelAndView;
     }
+
+    @RequestMapping("cart")
+    public ModelAndView cart(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/page-cart");
+        return modelAndView;
+    }
 }
