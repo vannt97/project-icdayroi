@@ -98,4 +98,18 @@ public class RouteController {
         modelAndView.setViewName("pages/insurance");
         return modelAndView;
     }
+
+    @RequestMapping("infomation-security")
+    public ModelAndView infomationSecurity(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/infomation-security");
+        return modelAndView;
+    }
+
+    @RequestMapping("policy")
+    public ModelAndView policy(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/policy");
+        return modelAndView;
+    }
 }

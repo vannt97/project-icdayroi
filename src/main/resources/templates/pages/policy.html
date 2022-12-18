@@ -1,0 +1,75 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>policy</title>
+    <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+    <!--    <link rel="stylesheet" th:href="@{~/css/pages/detail-product.css}"/>-->
+</head>
+<body>
+<section th:replace="index :: index_body">
+    <section id="policy" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-0 text-black pb-4 mb-0">
+            <h4>
+                CHÍNH SÁCH GIAO NHẬN VÀ THANH TOÁN
+            </h4>
+            <p class="fw-bold">
+                Các phương thức vận chuyển
+            </p>
+            <p>
+                -   Để hỗ trợ tốt nhất cho quý khách, ngoài cước phí của nhà vận chuyển, chúng tôi hoàn toàn không thu thêm bất cứ cước phí nào từ quý khách hàng. Các đơn hàng đặt hàng của quý khách trước 16h00 hàng ngày sẽ được gửi ngay trong ngày cho bên dịch vụ viettelpost, Đối với đơn hàng ở khu vực TP.HCM quý khách đặt trước 11h00 hàng sẽ được giao trong ngày, sau khi đã hoàn tất việc xác nhận đơn hàng thành công với khách hàng qua hình thức liên lạc trực tiếp qua điện thoại.
+            </p>
+            <p>
+                Lưu ý: Đối với những đơn hàng chưa được xác nhận sẽ chưa được gửi đi cho đến khi IC ĐÂY RỒI liên hệ được với khách hàng.
+            </p>
+            <p>
+                Nhận ship COD đối với đơn hàng trên 50.000 đ.
+            </p>
+            <p>
+                -   <span class="text-decoration-underline fw-bold">Mua hàng trực tiếp tại Cửa Hàng</span>: Quý khách có thể trực tiếp đến cửa hàng linh kiện điện tử IC ĐÂY RỒI để xem, kiểm tra sản phẩm, nhận sự tư vấn và mua hàng trực tiếp.
+            </p>
+            <p>
+                -   <span class="text-decoration-underline fw-bold">Giao hàng tận nơi</span>: IC ĐÂY RỒI sẽ giao hàng đến địa chỉ Quý khách yêu cầu, khu vực TP.HCM và các Tỉnh/Thành Phố khác trên Toàn Quốc qua dịch vụ Viettel Post.
+            </p>
+            <p>
+                -   <span class="text-decoration-underline fw-bold">Yêu cầu IC ĐÂY RỒI vận chuyển hàng đến nhà xe hoặc hãng vận chuyển</span>: Với hình thức này, khách hàng sẽ thanh toán trước qua ngân hàng và liên hệ trực tiếp với cửa hàng qua điện thoại, hoặc email của cửa hàng.
+            </p>
+            <p>
+                Chuyển Hàng Theo COD - Giao Hàng Nhận Tiền.
+                <br>Quý khách mất thêm phí dịch vụ COD theo quy định
+                <br>Dịch vụ này thuận tiện , nhưng chi phí cao.
+            </p>
+            <p>
+                Thông tin thanh toán:
+            </p>
+            <p class="ms-4">
+                - Ngân hàng VietcomBank chi nhánh Thủ Đức, TP.HCM
+            </p>
+            <p class="ms-4">
+                Tên: Cao Thị Ngọc Nhung
+            </p>
+            <p class="ms-4">
+                STK: 0381 000 516 975
+            </p>
+            <p class="fw-bold">
+                Miễn phí vận chuyển khi mua hàng online
+            </p>
+            <p>
+                -   Miễn phí giao hàng Toàn Quốc đối với các đơn hàng của quý khách có giá trị trên 500.000 Đ. (áp dụng cho các sản phẩm có khối lượng từ 0.5kg trở xuống và chuyển khoản trước)
+            </p>
+            <p>
+                Thời gian giao hàng: trong vòng 24h - 36h tùy theo địa chỉ của quý khách hàng. Tuy nhiên, vào thời gian cao điểm (lễ, tết, khuyến mãi,….), chúng tôi không thể giao hàng ngay nên sẽ thỏa thuận thời gian giao hàng cho Quý khách. Kính mong Quý khách thông cảm.
+            </p>
+            <p>
+                Thời gian giao hàng: từ 1-5 ngày.
+            </p>
+            <p>
+                Trân trọng cảm ơn.
+            </p>
+        </div>
+    </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</body>
+</html>
