@@ -11,13 +11,6 @@
 <section th:replace="index :: index_body">
     <section id="blog-detail" th:fragment="content_index (type)" th:remove="${type}">
         <div class="container px-lg-0 px-3 ">
-            <div class="category-product-name text-black pb-4" >
-                <a href="">Trang chủ</a>
-                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
-                <a href="">Tin tuc</a>
-                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
-                <span class="color-blue-light">detail tin tuc</span>
-            </div>
             <div th:replace="layouts/home-layout-content :: home-layout-content">
                 <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
                 <div class="blog-detail-content text-black" th:fragment="content">

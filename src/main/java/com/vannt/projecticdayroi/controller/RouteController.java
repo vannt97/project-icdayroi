@@ -84,4 +84,18 @@ public class RouteController {
         modelAndView.setViewName("pages/sign-in");
         return modelAndView;
     }
+
+    @RequestMapping("sign-up")
+    public ModelAndView signUp(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/sign-up");
+        return modelAndView;
+    }
+
+    @RequestMapping("insurance")
+    public ModelAndView insurance(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/insurance");
+        return modelAndView;
+    }
 }

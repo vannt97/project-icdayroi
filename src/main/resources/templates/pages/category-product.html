@@ -11,13 +11,6 @@
     <section th:replace="index :: index_body">
         <!--  category content  -->
         <section id="category-product" th:fragment="content_index (type)" th:remove="${type}">
-            <div class="container px-0 ">
-                <div class="category-product-name text-black pb-4" >
-                    <a href="">Trang chủ</a>
-                    <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
-                    <span class="color-blue-light">Ten loai linh kien</span>
-                </div>
-            </div>
             <div th:replace="layouts/home-layout-content :: home-layout-content">
                 <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
                 <div class="category-product-content" th:fragment="content">

@@ -1,0 +1,74 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Insurance</title>
+    <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+    <!--    <link rel="stylesheet" th:href="@{~/css/pages/detail-product.css}"/>-->
+</head>
+<body>
+    <section th:replace="index :: index_body">
+        <section id="insurance" th:fragment="content_index (type)" th:remove="${type}">
+            <div class="container text-black px-3 px-lg-0 pb-4">
+                <h4>CHÍNH SÁCH BẢO HÀNH - ĐỔI TRẢ</h4>
+                <p>
+                    IC ĐÂY RỒI luôn cam kết mang đến cho khách hàng chất lượng phục vụ tốt nhất, những sản phẩm có chất lượng tốt nhất, giá cạnh tranh nhất, đa dạng sản phẩm nhất. Chúng tôi luôn cam kết sản phẩm bán ra có chế độ bảo hành tốt nhất, tất cả các sản phẩm bán ra sẽ được kiểm tra và dán tem có logo và thương hiệu của IC ĐÂY RỒI. Tem bảo hành đối với những sản phẩm nằm trong danh mục bảo hành, những sản phẩm không nằm trong danh mục bảo hành sẽ được kiểm tra và dán tem test.
+                </p>
+                <p>
+                    Tất cả các sản phẩm mà khách hàng có vấn đề về chất lượng hoặc cách sử dụng hãy liên hệ trực tiếp đến trung tâm bảo hành của IC ĐÂY RỒI để được hỗ trợ và tư vấn.
+                </p>
+                <p>
+                    Điện thoại: 0385593358
+                </p>
+                <p>
+                    Email: icdayroi@gmail.com
+                </p>
+                <p>
+                    Địa chỉ: 04 Đường số 7, Khu phố 3, P. Linh Trung, Q. Thủ Đức, Tp. HCM
+                </p>
+                <p class="fw-bold">
+                    QUY ĐỊNH HÀNG BẢO HÀNH
+                </p>
+                <ul class="ms-5">
+                    <li>
+                        Sản phẩm nằm trong danh mục bảo hành.
+                    </li>
+                    <li>
+                        Sản phẩm của IC ĐÂY RỒI.
+                    </li>
+                    <li>
+                        Sản phẩm có tem bảo hành của IC ĐÂY RỒI.
+                    </li>
+                    <li>
+                        Sản phẩm không có dấu hiệu hỏng hóc do cơ học, cháy nổ do hỏa hoạn, bị nước vào.
+                    </li>
+                    <li>
+                        Sản phẩm không bị nổ bo mạch, sử dụng quá công suất, không đúng chức năng.
+                    </li>
+                    <li>
+                        Sản phẩm còn tem bảo hành nguyên vẹn không bị nứt vỡ.
+                    </li>
+                    <li>
+                        Sản phẩm khi bị lỗi không bị tháo dỡ, can thiệp của khách hàng lên sản phẩm.
+                    </li>
+                </ul>
+                <p>
+                    Lưu ý: Sản phẩm còn trong thời gian bảo hành bên trung tâm sẽ chịu hoàn toàn cước phí vận chuyển.
+                </p>
+                <p class="fw-bold">
+                    HỖ TRỢ SỬA CHỮA
+                </p>
+                <p>
+                    -Những sản phẩm đã hết hạn bảo hành, bị cháy nổ, hỏng hóc do nhiều nguyên nhân, những sản phẩm không nằm trong danh mục bảo hành sẽ được hỗ trợ sửa chữa thay thế theo bảng giá của IC ĐÂY RỒI.
+                </p>
+                <p>
+                    Chú ý: Sản phẩm bảo hành khách hàng phải chịu hoàn toàn cước phí vận chuyển.
+                </p>
+                <img th:src="@{~/images/baohanh.webp}" alt="insurance"/>
+            </div>
+        </section>
+    </section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</body>
+</html>

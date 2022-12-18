@@ -7,3 +7,4 @@ $(document).ready(function(){
     });
 });
 
+document.getElementById("breadcrumb").style.display = "none";

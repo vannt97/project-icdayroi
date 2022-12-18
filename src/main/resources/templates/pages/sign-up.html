@@ -1,0 +1,58 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Sign up</title>
+    <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+    <!--    <link rel="stylesheet" th:href="@{~/css/pages/detail-product.css}"/>-->
+</head>
+<body>
+<section th:replace="index :: index_body">
+    <section id="sign-up" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-sm-0 px-3">
+            <form class="pb-3 m-0">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-2 mb-md-4">
+                    <div class="col-12 col-md-6 mb-2 m-md-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example1">Họ và Tên <span class="text-danger">*</span></label>
+                            <input type="text" id="form6Example1" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2 m-md-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example2">Địa chỉ Email <span class="text-danger">*</span></label>
+                            <input type="email" id="form6Example2" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-md-4">
+                    <div class="col-12 col-md-6 mb-2 m-md-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example1">Mật khẩu <span class="text-danger">*</span></label>
+                            <input type="password" id="form6Example3" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2 m-md-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example2">Nhập lại mật khẩu <span class="text-danger">*</span></label>
+                            <input type="password" id="form6Example4" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-md-4">
+                    <div class="col">
+                        <input type="checkbox" >
+                        <label>Đăng ký nhận thông tin qua email</label>
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">ĐĂNG KÝ</button>
+            </form>
+        </div>
+    </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</body>
+</html>
