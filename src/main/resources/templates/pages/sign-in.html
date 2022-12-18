@@ -1,0 +1,55 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>Detail product</title>
+<!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+<!--    <link rel="stylesheet" th:href="@{~/css/pages/detail-product.css}"/>-->
+</head>
+<body>
+<section th:replace="index :: index_body">
+    <section id="detail-product" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container px-3 px-lg-0 ">
+            <div class="detail-product-name text-black pb-4" >
+                <a href="">Trang chủ</a>
+                <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                <span class="color-blue-light">Đăng nhập tài khoản</span>
+            </div>
+        </div>
+        <div class="container text-black px-3 px-lg-0 pb-4">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <h4 class="fw-bold">
+                        THÔNG TIN CÁ NHÂN
+                    </h4>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="#" class="ms-3">Quên mật khẩu</a>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4 class="fw-bold">BẠN CHƯA CÓ TÀI KHOẢN</h4>
+                    <p>
+                        Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng hơn ! Ngoài ra còn có rất nhiều chính sách và ưu đãi cho các thành viên
+                    </p>
+                    <button class="btn btn-secondary ">
+                        Đăng ký
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</body>
+</html>

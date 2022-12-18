@@ -77,4 +77,11 @@ public class RouteController {
         modelAndView.setViewName("pages/page-cart");
         return modelAndView;
     }
+
+    @RequestMapping("sign-in")
+    public ModelAndView signIn(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("pages/sign-in");
+        return modelAndView;
+    }
 }
