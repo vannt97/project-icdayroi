@@ -3,7 +3,18 @@ spring:
   thymeleaf:
     prefix: file:src/main/resources/templates/
     cache: false
-
+  datasource:
+    url: jdbc:mysql://localhost:3307/icdayroi
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
   # Static resources reloading during development
   resources:
     static-locations: file:src/main/resources/static/
