@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-
-
-<div th:fragment="sidebar" class="sidebar">
+<div th:fragment="sidebar(typeProducts)" class="sidebar">
     <div class="sidebar-title">
         <a href="/">
             <i class="fa-solid fa-bars"></i>
@@ -11,48 +9,15 @@
         </a>
     </div>
     <ul class="sidebar-content mb-3">
-        <li>
-            <a href="/">
+        <li th:each="type : ${typeProducts}" th:class="${type.typeSub.size > 0} ? 'dropdown-edit' : ''">
+            <a th:href="@{${type.slug}}">
                 <i class="fa-solid fa-caret-right"></i>
-                RASPEBBRY PI
+                <span th:text="${type.name}" th:remove="tag"></span>
             </a>
-        </li>
-        <li>
-            <a href="/">
-                <i class="fa-solid fa-caret-right"></i>
-                ARDUINO
-            </a>
-        </li>
-        <li class="dropdown-edit">
-            <a href="/">
-                <i class="fa-solid fa-caret-right"></i>
-                MẠCH NẠP & KÍT PHÁT TRIỂN
-            </a>
-            <i class="fa-solid fa-caret-down"></i>
-            <ul class="sidebar-content-child" >
-                <li>
-                    <a href="/">Mạch nạp</a>
-                </li>
-                <li>
-                    <a href="/">Kít phát triển</a>
-                </li>
-            </ul>
-        </li>
-        <li class="dropdown-edit">
-            <a href="/">
-                <i class="fa-solid fa-caret-right"></i>
-                DIODE & ZENER
-            </a>
-            <i class="fa-solid fa-caret-down"></i>
-            <ul class="sidebar-content-child" >
-                <li>
-                    <a href="/">Diode DIP</a>
-                </li>
-                <li>
-                    <a href="/">Diode SMD</a>
-                </li>
-                <li>
-                    <a href="/">Zener</a>
+            <i th:if="${type.typeSub.size > 0}" class="fa-solid fa-caret-down"></i>
+            <ul th:if="${type.typeSub.size > 0}" class="sidebar-content-child" >
+                <li th:each="typeSubProduct : ${type.typeSub}">
+                    <a th:href="@{${typeSubProduct.slug}}" th:text="${typeSubProduct.name}"></a>
                 </li>
             </ul>
         </li>

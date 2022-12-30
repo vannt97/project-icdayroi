@@ -24,12 +24,13 @@ public class TypeProductServicesImp implements TypeProductServices{
                 TypeProductDTO typeProductDTO = new TypeProductDTO();
                 typeProductDTO.setName(productEntity.getName());
                 typeProductDTO.setSlug(productEntity.getSlug());
+
                 List<TypeSubProductDTO> list = new ArrayList<>();
                 for(TypeProductEntity productEntitySecond : products){
                     if(productEntity.getId() == productEntitySecond.getParentId()){
                         TypeSubProductDTO typeSubProductDTO = new TypeSubProductDTO();
-                        typeSubProductDTO.setName(productEntity.getName());
-                        typeSubProductDTO.setSlug(productEntity.getSlug());
+                        typeSubProductDTO.setName(productEntitySecond.getName());
+                        typeSubProductDTO.setSlug(productEntitySecond.getSlug());
                         list.add(typeSubProductDTO);
                     }
                 }

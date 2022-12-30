@@ -38,6 +38,8 @@
     color: var(--black-color);
     display: block;
     padding-right: 0;
+    text-transform: uppercase;
+
 }
 .sidebar-content > li:hover > a{
     color: var(--blue-color-light);

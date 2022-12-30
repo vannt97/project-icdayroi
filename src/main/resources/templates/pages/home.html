@@ -21,7 +21,6 @@
                         <div class="home-carousel-content">
                             <div class="home-carousel-item">
                                 <img  th:src="@{/images/slide-img.png}" alt="slide-img.png"/>
-
                             </div>
                             <div class="home-carousel-item">
                                 <img  th:src="@{/images/slide-img3.png}" alt="slide-img3.png"/>
@@ -33,7 +32,7 @@
                     </div>
                     <div class="home-main">
                         <div th:replace="layouts/home-layout-content :: home-layout-content">
-                            <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+                            <div th:replace="layouts/sidebar :: sidebar(${typeProducts})" th:fragment="sidebar"></div>
                             <div class="home-main-right" th:fragment="content">
                                 <div class="home-main-right-article mb-4">
                                     <h4 class="text-uppercase">Sản phẩm mới</h4>
