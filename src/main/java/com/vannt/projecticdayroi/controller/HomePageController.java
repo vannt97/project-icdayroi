@@ -16,8 +16,7 @@ public class HomePageController {
     TypeProductServices typeProductServices;
     @RequestMapping("/")
     public String home(Model model) throws JsonProcessingException {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("pages/home");
+
 //        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //        String json = ow.writeValueAsString(typeProductServices.getAllTypeProducts());
 //        System.out.println(json);
