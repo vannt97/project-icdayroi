@@ -37,136 +37,27 @@
                                 <div class="home-main-right-article mb-4">
                                     <h4 class="text-uppercase">Sản phẩm mới</h4>
                                     <div class="row bg-white">
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
+                                        <div th:each="product,iProduct : ${newProducts}" class="col-6 col-md-4 col-xl-3">
+                                            <div class="home-main-product" th:classappend="'home-main-product-' + ${product.id}">
+                                                <a th:href="${product.slug}">
+                                                    <img th:src="@{'images/' + ${product.image}}" alt="product" src="">
+                                                    <p th:utext="${product.name}">
                                                         Máy hàn điểm chuyên nghiệp
                                                     </p>
                                                 </a>
                                                 <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
+                                                    <span th:data-price="${product.price}" th:utext="${#numbers.formatDecimal(product.price,0,'POINT',0,'POINT') + ' đ'}"></span>
+                                                    <span class="old-price"></span>
                                                 </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                                <button th:data-indexItem="${product.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                                <button th:data-indexItem="${product.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
+
                                             </div>
                                         </div>
                                     </div>
@@ -179,133 +70,23 @@
                                 <div class="home-main-right-article mb-4">
                                     <h4 class="text-uppercase">SẢN PHẨM BÁN CHẠY</h4>
                                     <div class="row bg-white">
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
+                                        <div th:each="product : ${bestSellerProducts}" class="col-6 col-md-4 col-xl-3">
+                                            <div class="home-main-product " th:classappend="'home-main-product-' + ${product.id}">
+                                                <a th:href="${product.slug}">
+                                                    <img th:src="@{'images/' + ${product.image}}" alt="product" src="">
+                                                    <p th:utext="${product.name}">
                                                         Máy hàn điểm chuyên nghiệp
                                                     </p>
                                                 </a>
                                                 <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
+                                                    <span th:data-price="${product.price}" th:utext="${#numbers.formatDecimal(product.price,0,'POINT',0,'POINT') + ' đ'}"></span>
+                                                    <span class="old-price"></span>
                                                 </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                                <button th:data-indexItem="${product.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal" >
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                                <button th:data-indexItem="${product.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>
@@ -321,133 +102,23 @@
                                 <div class="home-main-right-article mb-4">
                                     <h4 class="text-uppercase">SẢN PHẨM NỔI BẬT</h4>
                                     <div class="row bg-white">
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
+                                        <div th:each="product : ${featureProducts}" class="col-6 col-md-4 col-xl-3">
+                                            <div class="home-main-product" th:classappend="'home-main-product-' + ${product.id}">
+                                                <a th:href="${product.slug}">
+                                                    <img th:src="@{'images/' + ${product.image}}" alt="product" src="">
+                                                    <p th:utext="${product.name}">
                                                         Máy hàn điểm chuyên nghiệp
                                                     </p>
                                                 </a>
                                                 <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
+                                                    <span th:data-price="${product.price}" th:utext="${#numbers.formatDecimal(product.price,0,'POINT',0,'POINT') + ' đ'}"></span>
+                                                    <span class="old-price"></span>
                                                 </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                                <button th:data-indexItem="${product.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 col-xl-3">
-                                            <div class="home-main-product">
-                                                <a href="">
-                                                    <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                                    <p>
-                                                        Máy hàn điểm chuyên nghiệp
-                                                    </p>
-                                                </a>
-                                                <div class="home-main-product-price">
-                                                    <span>700.000đ</span>
-                                                    <span class="old-price">700.000đ</span>
-                                                </div>
-                                                <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                    Mua Ngay
-                                                </button>
-                                                <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                                <button th:data-indexItem="${product.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
                                                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                                                     Mua Ngay
                                                 </button>

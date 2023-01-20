@@ -1,5 +1,8 @@
 package com.vannt.projecticdayroi.controller;
 
+import com.vannt.projecticdayroi.services.ProductServices;
+import com.vannt.projecticdayroi.services.TypeProductServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +10,70 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class RouteController {
+    @Autowired
+    TypeProductServices typeProductServices;
+    @Autowired
+    ProductServices productServices;
+    @RequestMapping("/service-lazer")
+    public String serviceLazer(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+        model.addAttribute("searchName", "Cắt khắc laser");
+        return "pages/service-lazer";
+    }
+
+    @RequestMapping("/blog")
+    public String blog(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+        model.addAttribute("searchName", "Tin tức");
+        return "pages/blog";
+    }
+
+    @RequestMapping("/gioi-thieu")
+    public String gioiThieu(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+
+        model.addAttribute("searchName","Giới thiệu");
+        return "pages/gioi-thieu";
+    }
+
+    @RequestMapping("/contact")
+    public String contact(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+
+        model.addAttribute("searchName","LIÊN HỆ");
+        return "pages/lien-he";
+    }
+
+    @RequestMapping("/insurance")
+    public String insurance(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+        model.addAttribute("searchName","Chính sách bảo hành");
+        return "pages/insurance";
+    }
+
+        @RequestMapping("/infomation-security")
+    public String infomationSecurity(Model model){
+            model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+            model.addAttribute("searchName","Chính sách bảo mật thông tin");
+        return "pages/infomation-security";
+    }
+
+        @RequestMapping("/policy")
+    public String policy(Model model){
+            model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+            model.addAttribute("searchName","Chính sách bảo mật thông tin");
+        return "pages/policy";
+    }
+
+    @RequestMapping("/guide")
+    public String guide(Model model){
+
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+        model.addAttribute("searchName","Chính sách bảo mật thông tin");
+        return "pages/guide";
+    }
+
+
 
 
 //    @RequestMapping("category-product")

@@ -1,6 +1,10 @@
 package com.vannt.projecticdayroi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity(name = "type_product")
@@ -13,6 +17,18 @@ public class TypeProductEntity {
     private String name;
 
     private String slug;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "typeProductEntity",cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+    private Set<ProductEntity> productEntitySet;
+
+    public Set<ProductEntity> getProductEntitySet() {
+        return productEntitySet;
+    }
+
+    public void setProductEntitySet(Set<ProductEntity> productEntitySet) {
+        this.productEntitySet = productEntitySet;
+    }
 
     @Column(name = "parent_id")
     private int parentId;

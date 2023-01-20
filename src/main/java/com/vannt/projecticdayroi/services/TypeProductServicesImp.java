@@ -40,4 +40,9 @@ public class TypeProductServicesImp implements TypeProductServices{
         }
         return typeProductDTOs;
     }
+
+    @Override
+    public TypeProductEntity getTypeProduct(String slug) {
+        return typeProductRepository.findBySlug(slug);
+    }
 }

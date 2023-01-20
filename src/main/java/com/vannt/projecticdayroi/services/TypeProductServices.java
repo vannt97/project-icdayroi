@@ -8,4 +8,6 @@ import java.util.List;
 public interface TypeProductServices {
 
     public List<TypeProductDTO> getAllTypeProducts();
+
+    public TypeProductEntity getTypeProduct(String slug);
 }

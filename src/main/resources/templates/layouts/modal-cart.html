@@ -6,8 +6,8 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-check"></i> Sản phẩm <a href="#">Arduino ATTINY85 USB Digispark</a> đã được thêm vào giỏ hàng</h5>
-                <p> <a href="#">Giỏ hàng của bạn </a> <b>(<span>5</span> sản phẩm)</b></p>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-check"></i> Sản phẩm <a id="cart-modal-name-item" href="#">Arduino ATTINY85 USB Digispark</a> đã được thêm vào giỏ hàng</h5>
+                <p> <a  href="/cart">Giỏ hàng của bạn </a> <b>(<span id="cart-modal-total-item">5</span> sản phẩm)</b></p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -18,90 +18,7 @@
                     <div>Thành tiền</div>
                 </div>
                 <div class="cart-modal-table">
-                    <div class="cart-modal-row">
-                        <div class="cart-modal-row-item">
-                            <a href="#"><img th:src="@{~/images/product1.webp}" alt="item"/></a>
-                            <div>
-                                <a href="#">Name Item</a>
-                                <button>
-                                    <span><i class="fa-solid fa-xmark"></i></span>
-                                    Bỏ sản phẩm
-                                </button>
-                            </div>
-                        </div>
-                        <div class="cart-modal-row-price">
-                            40.000đ
-                        </div>
-                        <div class="cart-modal-amount">
-                            <input type="number" value="1">
-                        </div>
-                        <div class="cart-modal-row-total">
-                            40.000đ
-                        </div>
-                    </div>
-                    <div class="cart-modal-row">
-                        <div class="cart-modal-row-item">
-                            <a href="#"><img th:src="@{~/images/product1.webp}" alt="item"/></a>
-                            <div>
-                                <a href="#">Name Item</a>
-                                <button>
-                                    <span><i class="fa-solid fa-xmark"></i></span>
-                                    Bỏ sản phẩm
-                                </button>
-                            </div>
-                        </div>
-                        <div class="cart-modal-row-price">
-                            40.000đ
-                        </div>
-                        <div class="cart-modal-amount">
-                            <input type="number" value="1">
-                        </div>
-                        <div class="cart-modal-row-total">
-                            40.000đ
-                        </div>
-                    </div>
-                    <div class="cart-modal-row">
-                        <div class="cart-modal-row-item">
-                            <a href="#"><img th:src="@{~/images/product1.webp}" alt="item"/></a>
-                            <div>
-                                <a href="#">Name Item</a>
-                                <button>
-                                    <span><i class="fa-solid fa-xmark"></i></span>
-                                    Bỏ sản phẩm
-                                </button>
-                            </div>
-                        </div>
-                        <div class="cart-modal-row-price">
-                            40.000đ
-                        </div>
-                        <div class="cart-modal-amount">
-                            <input type="number" value="1">
-                        </div>
-                        <div class="cart-modal-row-total">
-                            40.000đ
-                        </div>
-                    </div>
-                    <div class="cart-modal-row">
-                        <div class="cart-modal-row-item">
-                            <a href="#"><img th:src="@{~/images/product1.webp}" alt="item"/></a>
-                            <div>
-                                <a href="#">Name Item</a>
-                                <button>
-                                    <span><i class="fa-solid fa-xmark"></i></span>
-                                    Bỏ sản phẩm
-                                </button>
-                            </div>
-                        </div>
-                        <div class="cart-modal-row-price">
-                            40.000đ
-                        </div>
-                        <div class="cart-modal-amount">
-                            <input type="number" value="1">
-                        </div>
-                        <div class="cart-modal-row-total">
-                            40.000đ
-                        </div>
-                    </div>
+
                 </div>
                 <div class="cart-modal-footer mb-2">
                     <div class="row align-items-center">
@@ -109,13 +26,13 @@
                             Giao hàng trên toàn quốc
                         </div>
                         <div class="col-6 my-2 fs-4 text-end">
-                            <b class="text-black"> Thành tiền: <span class="color-blue-light" >1.458.000₫ </span></b>
+                            <b class="text-black"> Thành tiền: <span class="color-blue-light" id="cart-modal-total-price" >1.458.000₫ </span></b>
                         </div>
                         <div class="col-6 my-2">
-                            <a href="#" class="color-blue-light fw-bold"><i class="me-2  fa-solid fa-play"></i>Tiếp tục mua hàng</a>
+                            <a data-bs-dismiss="modal" aria-label="Close" href="#" class="color-blue-light fw-bold"><i class="me-2  fa-solid fa-play"></i>Tiếp tục mua hàng</a>
                         </div>
                         <div class="col-6 my-2 text-end">
-                            <button class="btn btn-primary"> <i class="me-2 fa-solid fa-cart-shopping"></i> Tiếp tục mua hàng </button>
+                            <a href="/checkout" class="btn btn-primary"> <i class="me-2 fa-solid fa-cart-shopping"></i> Tiến hành đặt hàng</a>
                         </div>
                     </div>
                 </div>

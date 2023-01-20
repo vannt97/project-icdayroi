@@ -16,13 +16,13 @@
                 <div class="modal-add-cart-item d-flex mb-3">
                     <img th:src="@{~/images/product1.webp}" alt="item" class="me-3 w-25"/>
                     <div class="fs-4">
-                        <span class="text-black">name item</span>
-                        <span class="d-block color-blue-light">52.000đ</span>
+                        <span class="text-black" id="modal-add-cart-success-name">name item</span>
+                        <span class="d-block color-blue-light" id="modal-add-cart-success-price">52.000đ</span>
                     </div>
                 </div>
                 <div class="modal-add-cart-actions">
-                    <button class="btn btn-outline-dark d-block w-100 mb-2">Tiếp tục mua hàng</button>
-                    <a href="#" class="btn btn-primary d-block w-100">Tiến hành thanh toán >></a>
+                    <a data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-dark d-block w-100 mb-2">Tiếp tục mua hàng</a>
+                    <a href="/checkout" class="btn btn-primary d-block w-100">Tiến hành thanh toán >></a>
                 </div>
             </div>
         </div>

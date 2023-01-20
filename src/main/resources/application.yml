@@ -17,7 +17,13 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   # Static resources reloading during development
   resources:
-    static-locations: file:src/main/resources/static/
     cache-period: 0
   profiles:
     active: dev
+  web:
+    resources:
+      static-locations: file:src/main/resources/static/
+#  server:
+#    error:
+#      whitelabel:
+#        enabled: false

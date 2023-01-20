@@ -3,16 +3,16 @@
 <head>
     <div th:replace="index :: index_head"></div>
     <!--  css  -->
-    <title>Category Product</title>
+    <title>Blog</title>
 <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
     <link rel="stylesheet" th:href="@{~/css/pages/blog.css}"/>
 </head>
 <section th:replace="index :: index_body">
     <section id="blog" th:fragment="content_index (type)" th:remove="${type}">
         <div th:replace="layouts/home-layout-content :: home-layout-content">
-            <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+            <div th:replace="layouts/sidebar :: sidebar(typeProducts=null)" th:fragment="sidebar"></div>
             <div class="category-product-content" th:fragment="content">
-                <h4 class="fw-bold fs-3 text-black">
+                <h4 class="fw-bold fs-3 text-black px-2">
                     Tin tức
                 </h4>
                 <div class="row mx-0">
@@ -39,75 +39,75 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mb-4">
-                        <div class="row">
-                            <a class="d-block col-12 col-lg-5" href="#">
-                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>
-                            </a>
-                            <div class="ps-4 col-12 col-lg-7">
-                                <a href="#" class="text-black mb-2 fs-4 d-block">
-                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản
-                                </a>
-                                <p class="mb-3"><i class="fa-solid fa-user"></i>
-                                    <span class="me-2">Bùi Xuân Quang</span>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>25/03/2017</span>
-                                </p>
-                                <p>
-                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...
-                                </p>
-                                <button class="btn btn-primary">
-                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="row">
-                            <a class="d-block col-12 col-lg-5" href="#">
-                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>
-                            </a>
-                            <div class="ps-4 col-12 col-lg-7">
-                                <a href="#" class="text-black mb-2 fs-4 d-block">
-                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản
-                                </a>
-                                <p class="mb-3"><i class="fa-solid fa-user"></i>
-                                    <span class="me-2">Bùi Xuân Quang</span>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>25/03/2017</span>
-                                </p>
-                                <p>
-                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...
-                                </p>
-                                <button class="btn btn-primary">
-                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="row">
-                            <a class="d-block col-12 col-lg-5" href="#">
-                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>
-                            </a>
-                            <div class="ps-4 col-12 col-lg-7">
-                                <a href="#" class="text-black mb-2 fs-4 d-block">
-                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản
-                                </a>
-                                <p class="mb-3"><i class="fa-solid fa-user"></i>
-                                    <span class="me-2">Bùi Xuân Quang</span>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>25/03/2017</span>
-                                </p>
-                                <p>
-                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...
-                                </p>
-                                <button class="btn btn-primary">
-                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col-12 mb-4">-->
+<!--                        <div class="row">-->
+<!--                            <a class="d-block col-12 col-lg-5" href="#">-->
+<!--                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>-->
+<!--                            </a>-->
+<!--                            <div class="ps-4 col-12 col-lg-7">-->
+<!--                                <a href="#" class="text-black mb-2 fs-4 d-block">-->
+<!--                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản-->
+<!--                                </a>-->
+<!--                                <p class="mb-3"><i class="fa-solid fa-user"></i>-->
+<!--                                    <span class="me-2">Bùi Xuân Quang</span>-->
+<!--                                    <i class="fa-solid fa-calendar-days"></i>-->
+<!--                                    <span>25/03/2017</span>-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...-->
+<!--                                </p>-->
+<!--                                <button class="btn btn-primary">-->
+<!--                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-12 mb-4">-->
+<!--                        <div class="row">-->
+<!--                            <a class="d-block col-12 col-lg-5" href="#">-->
+<!--                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>-->
+<!--                            </a>-->
+<!--                            <div class="ps-4 col-12 col-lg-7">-->
+<!--                                <a href="#" class="text-black mb-2 fs-4 d-block">-->
+<!--                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản-->
+<!--                                </a>-->
+<!--                                <p class="mb-3"><i class="fa-solid fa-user"></i>-->
+<!--                                    <span class="me-2">Bùi Xuân Quang</span>-->
+<!--                                    <i class="fa-solid fa-calendar-days"></i>-->
+<!--                                    <span>25/03/2017</span>-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...-->
+<!--                                </p>-->
+<!--                                <button class="btn btn-primary">-->
+<!--                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-12 mb-4">-->
+<!--                        <div class="row">-->
+<!--                            <a class="d-block col-12 col-lg-5" href="#">-->
+<!--                                <img class="w-100" th:src="@{images/img-blog.png}" alt="img"/>-->
+<!--                            </a>-->
+<!--                            <div class="ps-4 col-12 col-lg-7">-->
+<!--                                <a href="#" class="text-black mb-2 fs-4 d-block">-->
+<!--                                    Điện tử cơ bản: Các linh kiện điện tử cơ bản-->
+<!--                                </a>-->
+<!--                                <p class="mb-3"><i class="fa-solid fa-user"></i>-->
+<!--                                    <span class="me-2">Bùi Xuân Quang</span>-->
+<!--                                    <i class="fa-solid fa-calendar-days"></i>-->
+<!--                                    <span>25/03/2017</span>-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    Việc đầu tiên khi làm quen với điện tử, chúng ta cần có cái nhìn tổng quát về các linh kiện điện tử cơ bản. Các linh kiện điện tử là các phần tử rời rạc cơ bản có những tính năng xác định...-->
+<!--                                </p>-->
+<!--                                <button class="btn btn-primary">-->
+<!--                                    Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
 
                 </div>

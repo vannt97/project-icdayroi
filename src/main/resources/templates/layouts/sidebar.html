@@ -2,13 +2,13 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="sidebar(typeProducts)" class="sidebar">
-    <div class="sidebar-title">
-        <a href="/">
+    <div  class="sidebar-title">
+        <a href="/all">
             <i class="fa-solid fa-bars"></i>
             <span>DANH MỤC SẢN PHẨM</span>
         </a>
     </div>
-    <ul class="sidebar-content mb-3">
+    <ul  class="sidebar-content mb-3">
         <li th:each="type : ${typeProducts}" th:class="${type.typeSub.size > 0} ? 'dropdown-edit' : ''">
             <a th:href="@{${type.slug}}">
                 <i class="fa-solid fa-caret-right"></i>

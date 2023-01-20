@@ -18,14 +18,17 @@
 <body >
     <section th:fragment="index_body">
         <section id="index-wrapper">
-            <header th:replace="layouts/header :: header">
+            <header th:replace="layouts/header :: header(${typeProducts})">
             </header>
             <div id="breadcrumb" class="container-fluid px-0 bg-black-opacity">
-                <div class="container px-0">
+                <div class="container px-md-0">
                     <div class="detail-product-name text-black pb-4 " >
-                        <a href="">Trang chủ</a>
+                        <a href="/">Trang chủ</a>
+                        <i th:if="${typeProductLink}" class="fs-7 mx-2 fa-solid fa-angles-right"></i>
+                        <a th:text="${typeProductLink} ? ${typeProductLink.name} : ''" th:href="${typeProductLink} ? ${typeProductLink.slug} : ''" th:if="${typeProductLink}" class="color-blue-light" >
+                        </a>
                         <i class="fs-7 mx-2 fa-solid fa-angles-right"></i>
-                        <span class="color-blue-light">Cart</span>
+                        <span class="color-blue-light" th:text="${searchName}"></span>
                     </div>
                 </div>
             </div>
@@ -53,13 +56,17 @@
     </div>
 
     <script src="http://localhost:35729/livereload.js"></script>
+    <script th:src="@{~/js/config/config.js}"></script>
     <script th:src="@{~/js/vendor/jquery-3.6.1.min.js}"></script>
     <script th:src="@{~/js/vendor/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/js/vendor/slick.min.js}"></script>
-    <script th:src="@{~/js/components/header.js}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script th:src="@{~/js/apis/APIGeneral.js}"></script>
+    <script th:src="@{~/js/util/CookieUtil.js}"></script>
+    <script th:src="@{~/js/util/DeviceType.js}"></script>
     <script th:src="@{~/js/index.js}"></script>
+    <script th:src="@{~/js/components/header.js}"></script>
     <script th:src="@{~/js/components/sidebar.js}"></script>
     <script th:src="@{~/js/plugins/modal-cart.js}"></script>
-    <script th:src="@{~/js/plugins/modal-add-cart-success.js}"></script>
 </body>
 </html>

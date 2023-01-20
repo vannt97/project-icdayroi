@@ -1,0 +1,20 @@
+.table-cart-page thead tr th{
+    padding: var(--p-1) var(--p-2);
+    text-align: center;
+}
+.table-cart-page tbody tr td{
+    text-align: center;
+}
+.table-cart-page tbody tr td img{
+    width: 100px;
+}
+.table-cart-page tbody tr td input{
+    width: 50px;
+}
+.table-cart-page tbody tr td.table-cart-page-name{
+    width: 400px;
+}
+.table-cart-page-price{
+    font-weight: bold;
+    color: var(--blue-color-light);
+}

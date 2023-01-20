@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <div th:replace="index :: index_head"></div>
+    <!--  css  -->
+    <title>404</title>
+    <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+</head>
+<section th:replace="index :: index_body">
+    <section id="error404" th:fragment="content_index (type)" th:remove="${type}">
+        <div class="container">
+            <h1 class="text-danger text-center display-1 fw-bold">404</h1>
+            <p class="text-black text-center display-4 mb-0 ">Không tìm thấy trang mà bạn yêu cầu!</p>
+            <div class="text-center pb-3">
+                <a href="/" class="btn btn-primary">Quay lại trang chủ</a>
+            </div>
+        </div>
+    </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+</html>

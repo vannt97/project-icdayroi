@@ -50,9 +50,12 @@
 .cart-modal-row-item > a{
     width: 30%;
     border: 1px solid;
-    margin-right: 1rem;
     color: var(--black-color);
     font-weight: bold;
+}
+.cart-modal-row-item > div{
+    max-width: 70%;
+    padding-left: 1rem;
 }
 .cart-modal-row-item > div > button{
     display: flex;
@@ -63,7 +66,9 @@
     padding: 0;
 }
 .cart-modal-row-item > div > button span{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     color: var(--white-color);

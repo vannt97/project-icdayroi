@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+    <!--  css  -->
+    <div th:replace="index :: index_head"></div>
+    <title>Ic đây rồi - Thánh toán hóa đơn</title>
+    <link rel="stylesheet" th:href="@{~/css/pages/checkout.css}"/>
+</head>
+<body>
+
+<section id="checkout" >
+    <div class="container-xl container-lg-fluid h-100 px-lg-5 px-xl-2 container px-xl-2">
+        <form id="form-checkout">
+
+        <div class="row h-100">
+                <div class="col-12  col-lg-8">
+                    <a class="my-3 mb-4 d-lg-inline-block d-block  text-center" href="/" >
+                        <img th:src="@{~/images/brand_logo.webp}" alt="logo"/>
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="text-black fw-bold m-0">Thông tin nhận hàng</h3>
+                                <a href="/signin" class="color-blue-light">
+                                    <i class="fa-regular fa-circle-user"></i>
+                                    Đăng nhập
+                                </a>
+                            </div>
+                            <div class="form-info-order form-effect-1">
+                                <div>
+                                    <input id="email" pattern="[^ @]*@[^ @]*" name="email" type="text" placeholder=" " required >
+                                    <label for="email">Email (tùy chọn)</label>
+                                </div>
+                                <div>
+                                    <input id="name" name="name" type="text" placeholder=" " required>
+                                    <label for="name">Họ và tên</label>
+                                </div>
+                                <div>
+                                    <input id="phoneNumber" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phoneNumber" type="text" required placeholder=" ">
+                                    <label for="phoneNumber">Số điện thoại</label>
+                                </div>
+                                <div>
+                                    <input id="address" type="text" name="address" required placeholder=" ">
+                                    <label for="address">Địa chỉ (tùy chọn)</label>
+                                </div>
+                                <div>
+                                    <input id="province" type="text" name="province" required placeholder=" ">
+                                    <label for="province">Tỉnh thành</label>
+                                </div>
+                                <div>
+                                    <input id="district" type="text" placeholder=" " required name="district">
+                                    <label for="district">Quận huyện (tùy chọn)</label>
+                                </div>
+                                <div>
+                                    <textarea placeholder=" " name="messageNote" id="message-note" ></textarea>
+                                    <label for="message-note">Ghi chú (tùy chọn)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12  pe-lg-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="text-black fw-bold m-0">Vận chuyển</h3>
+                            </div>
+                            <div class="checkout-delivery mb-4">
+                                <div>
+                                    <input value="giao_hang_tan_noi" checked id="delivery-1" type="radio" name="delivery">
+                                    <label for="delivery-1">
+                                        <span>	Giao hàng tận nơi </span>
+                                        <span>40.000 đ</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input value="nhan_tai_cua_hang" id="delivery-2" type="radio" name="delivery">
+                                    <label for="delivery-2">
+                                        <span>	Nhận hàng tại cửa hàng</span>
+                                        <span>Miễn Phí</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="text-black fw-bold m-0">Thanh toán</h3>
+                            </div>
+                            <div class="checkout-payment">
+                                <div>
+                                    <label for="payments-1">
+                                        <span>Ship COD</span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                    </label>
+                                    <input id="payments-1" type="radio" name="payment" value="ship_cod" required/>
+                                    <div>
+                                        <p>Khi nhận được hàng mới thanh toán toàn bộ số tiền.
+                                        </p>
+                                        <p class="text-danger">
+                                            Lưu ý: Chỉ ship COD cho đơn hàng có giá trị hàng hóa từ 50.000đ trở lên.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="payments-2">
+                                        <span>	Thanh toán trực tiếp tại cửa hàng</span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                    </label>
+                                    <input id="payments-2" type="radio" name="payment" value="thanh_toan_truc_tiep" required/>
+                                    <div>
+                                        <p>- Vui lòng chọn vận chuyển là: Nhận hàng tại cửa hàng
+                                        </p>
+                                        <p class="">
+                                            - Khách hàng qua IC ĐÂY RỒI lấy hàng và thanh toán tại cửa hàng
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="payments-3">
+                                        <span>		Thanh toán qua MoMo hoặc ZaloPay</span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                    </label>
+                                    <input id="payments-3" type="radio" name="payment" value="thanh_toan_dien_tu" required/>
+                                    <div>
+                                        <p>Chuyển tiền qua SĐT: 038 559 3358
+                                        </p>
+                                        <p class="">
+                                            Nội dung chuyển tiền ghi mã đơn hàng
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="payments-4">
+                                        <span>	Chuyển khoản qua ngân hàng VietcomBank</span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                    </label>
+                                    <input id="payments-4" type="radio" name="payment" value="thanh_toan_ngan_hang" required/>
+                                    <div>
+                                        <p>Chuyển khoản đúng số tiền vô số tài khoản VietcomBank theo thông tin sau
+                                        </p>
+                                        <p class="">
+                                            Tên: Cao Thị Ngọc Nhung
+                                        </p>
+                                        <p class="">
+                                            STK: 0381 000 516 975
+                                        </p>
+                                        <p class="">
+                                            VietcomBank chi nhánh: Thủ Đức, TP.HCM
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="payments-5">
+                                        <span>Chuyển khoản qua ngân hàng VietinBank</span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                    </label>
+                                    <input id="payments-5" type="radio" name="payment" value="thanh_toan_ngan_hang" required/>
+                                    <div>
+                                        <p>Chuyển khoản đúng số tiền vô số tài khoản VietcomBank theo thông tin sau
+                                        </p>
+                                        <p class="">
+                                            Tên: Bùi Xuân Quang
+                                        </p>
+                                        <p class="">
+                                            STK: 105 002 822 030
+                                        </p>
+                                        <p class="">
+                                            Vietinbank chi nhánh: Bình Thới, TP.HCM
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top mt-5">
+                    </div>
+                </div>
+                <div class="col-12  p-xl-4 col-lg-4 checkout-right border-start text-black">
+                    <h4 id="dropmenuBtn" class="d-flex justify-content-between d-lg-block border-bottom pt-4 pb-4 ps-3 fw-bold">
+                        <span>Đơn hàng (<span id="checkout-total-amount-item"></span> sản phẩm) <i class="d-lg-none d-inline-block fa-solid fa-angle-down"></i></span>
+                        <span class="d-block d-lg-none">đ</span>
+                    </h4>
+                    <div class="checkout-right-wrapper">
+                        <ul class="checkout-list-item ">
+
+                        </ul>
+                        <!--                    <div class="d-none d-lg-flex py-3  border-bottom align-items-center">-->
+                        <!--                        <div class="form-effect-1 w-75">-->
+                        <!--                            <div class="m-0">-->
+                        <!--                                <input id="voucher" type="text" placeholder=" ">-->
+                        <!--                                <label for="voucher">Nhập mã giảm giá</label>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <button class="btn btn-primary ms-3">Áp Dụng</button>-->
+                        <!--                    </div>-->
+                        <div class="border-bottom py-3">
+                            <div class="d-flex pb-3 justify-content-between">
+                                <span>Tạm tính</span>
+                                <span id="checkout-total-price">₫</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Phí vận chuyển</span>
+                                <span id="checkout-transport-fee">40.000₫</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between py-3">
+                            <span class="fs-3">Tổng cộng</span>
+                            <span id="checkout-total-price-item-transport-fee" class="color-blue-light fs-3">₫</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center py-3">
+                        <a href="/cart" class="color-blue-light">
+                            <i class="fa-solid fa-angle-left"></i>
+                            Quay về giỏ hàng
+                        </a>
+                        <button id="btn-checkout" type="submit" class="btn-primary btn p-3" >ĐẶT HÀNG</button>
+                    </div>
+
+                </div>
+        </div>
+        </form>
+
+    </div>
+</section>
+
+
+
+
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+<script th:src="@{~/js/pages/checkout.js}"></script>
+
+</body>
+
+
+
+</html>

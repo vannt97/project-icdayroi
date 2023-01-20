@@ -10,4 +10,6 @@ import java.util.List;
 public interface TypeProductRepository extends JpaRepository<TypeProductEntity,Integer> {
 
     public List<TypeProductEntity> findAll();
+
+    public TypeProductEntity findBySlug(String slug);
 }

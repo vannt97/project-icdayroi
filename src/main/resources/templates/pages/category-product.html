@@ -3,7 +3,7 @@
 <head>
     <div th:replace="index :: index_head"></div>
     <!--  css  -->
-    <title>Category Product</title>
+    <title th:utext="${searchName}"></title>
     <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>
     <link rel="stylesheet" th:href="@{~/css/pages/category-product.css}"/>
 </head>
@@ -12,28 +12,28 @@
         <!--  category content  -->
         <section id="category-product" th:fragment="content_index (type)" th:remove="${type}">
             <div th:replace="layouts/home-layout-content :: home-layout-content">
-                <div th:replace="layouts/sidebar :: sidebar" th:fragment="sidebar"></div>
+                <div th:replace="layouts/sidebar :: sidebar(${typeProducts})" th:fragment="sidebar"></div>
                 <div class="category-product-content" th:fragment="content">
                     <div class="category-product-top fs-4  py-3 d-flex justify-content-between text-black align-items-center">
-                        <h4 class="fw-bold m-0 fs-3">Name</h4>
+                        <h4 th:utext="${searchName}" class="fw-bold m-0 fs-3">Name</h4>
                         <div class="category-product-filter d-flex align-items-center">
                             <div class="">
                                 <span>Sắp xếp</span>
-                                <select>
+                                <select id="">
                                     <option> Mặc định </option>
-                                    <option> Gía tăng dần</option>
-                                    <option> Gía giảm dần</option>
-                                    <option> Từ A - Z</option>
-                                    <option> Từ Z - A</option>
-                                    <option> Cũ đến mới </option>
-                                    <option> Mới đến cũ </option>
-                                    </select>
+                                    <option value=""> Gía tăng dần</option>
+                                    <option value=""> Gía giảm dần</option>
+                                    <option value=""> Từ A - Z</option>
+                                    <option value=""> Từ Z - A</option>
+                                    <option value=""> Cũ đến mới </option>
+                                    <option value=""> Mới đến cũ </option>
+                                </select>
                             </div>
                             <div class="ms-4 ">
-                                <a href="#" class="color-blue-light">
+                                <a data-mode="1" href="#" class="color-blue-light">
                                     <i class="fa fa-th" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a data-mode="2" href="#">
                                     <i class="fa fa-th-list" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -41,262 +41,30 @@
                     </div>
                     <div class="category-product-bottom">
                         <div class="home-main-right-article mb-4">
-                            <div class="row">
-                                <div class="col-12 mt-3">
-                                    <div class="home-main-product-style-2 d-flex bg-white">
-                                        <a href="#">
-                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
+                            <div class="row bg-white">
+                                <div th:each="product : ${categoryProducts}" class="col-6 col-md-4 col-xl-3">
+                                    <div th:classappend="'home-main-product-' + ${product.id}" class="home-main-product">
+                                        <a th:href="${product.slug}">
+                                            <img th:src="@{'images/' + ${product.image}}" alt="product" src="">
+                                            <p th:utext="${product.name}">
+                                                Máy hàn điểm chuyên nghiệp
+                                            </p>
                                         </a>
-                                        <div class="px-1 py-4">
-                                            <a class="d-block fs-4 fw-bold" href="#">
-                                                <p class="m-0">Máy hàn điểm chuyên nghiệp</p>
-                                            </a>
-                                            <div class="color-blue-light fs-5 fw-bold mb-2">
-                                                <span>700.000đ</span>
-                                                <span class="old-price">700.000đ</span>
-                                            </div>
-                                            <button class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                            <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
+                                        <div class="home-main-product-price">
+                                            <span th:data-price="${product.price}" th:utext="${#numbers.formatDecimal(product.price,0,'POINT',0,'POINT') + ' đ'}"></span>
+                                            <span class="old-price"></span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="home-main-product-style-2 d-flex bg-white">
-                                        <a href="#">
-                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                        </a>
-                                        <div class="px-1 py-4">
-                                            <a class="d-block fs-4 fw-bold" href="#">
-                                                <p class="m-0">Máy hàn điểm chuyên nghiệp</p>
-                                            </a>
-                                            <div class="color-blue-light fs-5 fw-bold mb-2">
-                                                <span>700.000đ</span>
-                                                <span class="old-price">700.000đ</span>
-                                            </div>
-                                            <button class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                            <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="home-main-product-style-2 d-flex bg-white">
-                                        <a href="#">
-                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                        </a>
-                                        <div class="px-1 py-4">
-                                            <a class="d-block fs-4 fw-bold" href="#">
-                                                <p class="m-0">Máy hàn điểm chuyên nghiệp</p>
-                                            </a>
-                                            <div class="color-blue-light fs-5 fw-bold mb-2">
-                                                <span>700.000đ</span>
-                                                <span class="old-price">700.000đ</span>
-                                            </div>
-                                            <button class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                            <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="home-main-product-style-2 d-flex bg-white">
-                                        <a href="#">
-                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                        </a>
-                                        <div class="px-1 py-4">
-                                            <a class="d-block fs-4 fw-bold" href="#">
-                                                <p class="m-0">Máy hàn điểm chuyên nghiệp</p>
-                                            </a>
-                                            <div class="color-blue-light fs-5 fw-bold mb-2">
-                                                <span>700.000đ</span>
-                                                <span class="old-price">700.000đ</span>
-                                            </div>
-                                            <button class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                            <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <div class="home-main-product-style-2 d-flex bg-white">
-                                        <a href="#">
-                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">
-                                        </a>
-                                        <div class="px-1 py-4">
-                                            <a class="d-block fs-4 fw-bold" href="#">
-                                                <p class="m-0">Máy hàn điểm chuyên nghiệp</p>
-                                            </a>
-                                            <div class="color-blue-light fs-5 fw-bold mb-2">
-                                                <span>700.000đ</span>
-                                                <span class="old-price">700.000đ</span>
-                                            </div>
-                                            <button class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                            <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
-                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                                                Mua Ngay
-                                            </button>
-                                        </div>
+                                        <button th:data-indexItem="${product.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal" >
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button th:data-indexItem="${product.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-<!--                            <div class="row bg-white">-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 col-md-4 col-xl-3">-->
-<!--                                    <div class="home-main-product">-->
-<!--                                        <a href="">-->
-<!--                                            <img th:src="@{~/images/product1.webp}" alt="product" src="">-->
-<!--                                            <p>-->
-<!--                                                Máy hàn điểm chuyên nghiệp-->
-<!--                                            </p>-->
-<!--                                        </a>-->
-<!--                                        <div class="home-main-product-price">-->
-<!--                                            <span>700.000đ</span>-->
-<!--                                            <span class="old-price">700.000đ</span>-->
-<!--                                        </div>-->
-<!--                                        <button class="d-none d-lg-block    " data-bs-toggle="modal" data-bs-target="#cart-modal">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                        <button class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">-->
-<!--                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>-->
-<!--                                            Mua Ngay-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
                         </div>
                         <nav aria-label="Page navigation" class="my-4">
                             <ul class="pagination justify-content-end">
@@ -317,6 +85,88 @@
     <div th:replace="layouts/modal-add-cart-success :: modal-add-cart-success"></div>
     <th:block th:insert="~{index :: body/div}"></th:block>
     <th:block th:insert="~{index :: body/script}"></th:block>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var categoryProducts = [[${categoryProducts}]];
+        /*]]>*/
+        const btnModes = document.querySelectorAll("a[data-mode]");
+        btnModes.forEach(elem => {
+            elem.addEventListener('click', (e) =>{
+                e.preventDefault();
+                let html = [];
+                if(e.currentTarget.dataset.mode == 1){
+                    $("a[data-mode]").removeClass("color-blue-light");
+                    e.currentTarget.classList.add("color-blue-light");
+                    html = categoryProducts.map(item => {
+                        return ` <div class="col-6 col-md-4 col-xl-3">
+                                    <div  class="home-main-product home-main-product-${item.id}">
+                                        <a href="${item.slug}">
+                                            <img src="images/${item.image}" alt="product" src="">
+                                            <p>
+                                                ${item.name}
+                                            </p>
+                                        </a>
+                                        <div class="home-main-product-price">
+                                            <span data-price="${item.price}">${formatCurrency(item.price)} đ</span>
+                                            <span class="old-price d-none"></span>
+                                        </div>
+                                        <button data-indexItem="${item.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal" >
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                        <button data-indexItem="${item.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                            Mua Ngay
+                                        </button>
+                                    </div>
+                                </div>`
+                    }).join('');
+                    document.querySelector(".home-main-right-article .row").classList.add('bg-white');
+                    document.querySelector(".home-main-right-article .row").innerHTML = html;
+
+                }
+                if(e.currentTarget.dataset.mode == 2){
+                    $("a[data-mode]").removeClass("color-blue-light");
+
+                    e.currentTarget.classList.add("color-blue-light");
+                    html = categoryProducts.map(item => {
+                        return `                                <div class="col-12 mt-3">
+                                    <div class="home-main-product-style-2 home-main-product-${item.id} d-flex bg-white">
+                                        <a href="${item.slug}">
+                                            <img style="width: 240px" src="images/${item.image}" alt="product" src="">
+                                            <p class="d-none">${item.name}</p>
+                                        </a>
+                                        <div class="px-1 py-4">
+                                            <a class="d-block fs-4 fw-bold" href="${item.slug}">
+                                                <p class="m-0">${item.name}</p>
+                                            </a>
+                                            <div class="color-blue-light fs-5 fw-bold mb-2 home-main-product-price">
+                                                <span data-price="${item.price}" >${formatCurrency(item.price)} đ</span>
+                                                <span class="old-price d-none">700.000đ</span>
+                                            </div>
+                                            <button data-indexItem="${item.id}" class="d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#cart-modal">
+                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                                Mua Ngay
+                                            </button>
+                                            <button data-indexItem="${item.id}" class="d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#modal-add-cart-success">
+                                                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                                                Mua Ngay
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+`
+                    }).join('');
+                    document.querySelector(".home-main-right-article .row").classList.add('bg-white');
+                    document.querySelector(".home-main-right-article .row").classList.remove('bg-white');
+
+                    document.querySelector(".home-main-right-article .row").innerHTML = html;
+                }
+            })
+        })
+
+
+    </script>
     <!-- script    -->
     <!--    <script th:src="@{~/js/pages/home.js}"></script>-->
 </body>
