@@ -54,7 +54,7 @@ $("input[name=delivery]").click(function (e){
     if(e.currentTarget.value == "giao_hang_tan_noi"){
      price = 40000;
     }
-    $("#checkout-transport-fee").html(price);
+    $("#checkout-transport-fee").html(`${formatCurrency(price)} đ`);
     let totalPrice = 0;
     let dataCart = JSON.parse(localStorage.getItem('cart'));
     dataCart.forEach(item => {
@@ -85,6 +85,10 @@ document.getElementById("form-checkout").addEventListener("submit", (e)=>{
             'Cảm ơn bạn đã tin tưởng chúng ',
             'success'
         )
+        let url = res.data
+        setTimeout(()=>{
+            window.location.href = url;
+        },500)
     })
 
 })
@@ -92,7 +96,6 @@ document.getElementById("form-checkout").addEventListener("submit", (e)=>{
 function validCartBeforeLoadPage(){
     if(!JSON.parse(localStorage.getItem('cart'))){
        let tagA =  document.createElement("a");
-       console.log(window.location.hostname)
        tagA.href = "/";
        tagA.click();
     }

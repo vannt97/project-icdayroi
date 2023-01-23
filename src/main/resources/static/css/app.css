@@ -68,9 +68,16 @@ button{
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-
     opacity: 1;
+}
 
+.img-wh-70{
+    width: 70px;
+    height: 70px;
+}
+
+.color-filter-green{
+    filter: invert(53%) sepia(90%) saturate(2593%) hue-rotate(85deg) brightness(119%) contrast(124%);
 }
 /*phone call*/
 .phone-call,

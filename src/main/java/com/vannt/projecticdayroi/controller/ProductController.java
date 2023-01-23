@@ -19,7 +19,6 @@ public class ProductController {
 
     @GetMapping(value = "/products")
     public ResponseEntity<?> filterProducts(@RequestParam(name = "search", required = false) String name){
-        System.out.println("dasdasdsa" + name);
         List<ProductDTO> list =  productServices.getListProductByName(name);
         ResponseData responseData = new ResponseData();
         responseData.setStatus(HttpStatus.OK.value());

@@ -18,11 +18,10 @@ public class BillProductEntity {
     @MapsId("idBill")
      BillEntity billEntity;
 
-    @JsonIgnore
     @ManyToOne
     @MapsId("idProduct")
     @JoinColumn(name = "id_product")
-     ProductEntity productEntity;
+    ProductEntity productEntity;
 
     public BillProductId getBillProductId() {
         return billProductId;

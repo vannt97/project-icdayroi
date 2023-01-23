@@ -18,4 +18,11 @@ public class LoginController {
 
         return "pages/sign-in";
     }
+
+    @RequestMapping("/signup")
+    public String signup(Model model){
+        model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
+
+        return "pages/sign-up";
+    }
 }

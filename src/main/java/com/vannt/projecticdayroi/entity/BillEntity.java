@@ -10,8 +10,13 @@ import java.util.UUID;
 @Entity(name = "bill")
 public class BillEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(name = "id",updatable = false,nullable = false)
+    private UUID id;
 
     @Column(name = "id_user")
     private int idUser;
@@ -50,11 +55,11 @@ public class BillEntity {
         this.billProductEntities = billProductEntities;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

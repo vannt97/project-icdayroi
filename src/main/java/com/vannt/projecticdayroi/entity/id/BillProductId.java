@@ -8,16 +8,16 @@ import java.util.UUID;
 @Embeddable
 public class BillProductId implements Serializable {
     @Column(name = "id_bill", nullable = false)
-    private int idBill;
+    private UUID idBill;
 
     @Column(name = "id_product", nullable = false)
     private int idProduct;
 
-    public int getIdBill() {
+    public UUID getIdBill() {
         return idBill;
     }
 
-    public void setIdBill(int idBill) {
+    public void setIdBill(UUID idBill) {
         this.idBill = idBill;
     }
 

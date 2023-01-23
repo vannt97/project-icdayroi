@@ -1,0 +1,48 @@
+#checkout-success{
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.05);
+}
+.checkout-success-list{
+    height: 210px;
+    overflow: auto;
+}
+.checkout-success-list li {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+.checkout-success-list li > *{
+}
+.checkout-success-list li img{
+    border-radius: 8px;
+    width: 70px;
+    height: 70px;
+}
+.checkout-success-list li > div{
+    border-radius: 8px;
+    border: 1px solid;
+    position: relative;
+    min-width: 20%;
+}
+.checkout-success-list li >span{
+    display: block;
+    min-width: 20%;
+}
+.checkout-success-list li > p{
+    min-width: 60%;
+    padding-left: 1rem;
+}
+.checkout-success-list li > div span{
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: var(--blue-color-light);
+    color: white;
+    border-radius: 50%;
+}

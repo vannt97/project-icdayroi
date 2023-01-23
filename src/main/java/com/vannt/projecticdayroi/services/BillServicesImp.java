@@ -17,6 +17,7 @@ import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class BillServicesImp implements BillServices{
@@ -39,7 +40,7 @@ public class BillServicesImp implements BillServices{
 
     @Override
     @Transactional
-    public void saveBill(BillDTO billDTO, int userId) throws Exception {
+    public BillEntity saveBill(BillDTO billDTO, int userId) throws Exception {
         try{
             BillEntity billEntity = new BillEntity();
             billEntity.setIdUser(userId);
@@ -49,7 +50,7 @@ public class BillServicesImp implements BillServices{
             billEntity.setMessageNote(billDTO.getMessageNote());
             billEntity.setDelivery(billDTO.getDelivery());
             billEntity.setPayment(billDTO.getPayment());
-            if(billEntity.getPayment().equals("ship_cod")){
+            if(billEntity.getDelivery().equals("giao_hang_tan_noi")){
                 billEntity.setDeliveryPrice(40000);
             }else {
                 billEntity.setDeliveryPrice(0);
@@ -65,11 +66,16 @@ public class BillServicesImp implements BillServices{
         }
 
         billEntity.setBillProductEntities(list);
-            billRepository.save(billEntity);
+            return billRepository.save(billEntity);
 
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
+    }
+
+    @Override
+    public BillEntity get1Bill(UUID uuid) {
+        return billRepository.findById(uuid);
     }
 
 

@@ -7,4 +7,5 @@ public interface UserServices {
 
     public int saveUser(UserDTO userDTO);
 
+    public UserEntity get1User(int id);
 }

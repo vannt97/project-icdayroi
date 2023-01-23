@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -58,9 +59,11 @@ public class BillControler {
             billDTO.setMessageNote(requestBill.getMessageNote());
             billDTO.setPayment(requestBill.getPayment());
             billDTO.setBillProductModelSet(requestBill.getListProduct());
-            billServices.saveBill(billDTO,id);
+            BillEntity billEntity  = billServices.saveBill(billDTO,id);
             responseData.setStatus(HttpStatus.OK.value());
             responseData.setSucces(true);
+            responseData.setData("checkout/" + billEntity.getId());
+
         }catch (Exception e){
             responseData.setStatus(HttpStatus.EXPECTATION_FAILED.value());
             responseData.setSucces(false);

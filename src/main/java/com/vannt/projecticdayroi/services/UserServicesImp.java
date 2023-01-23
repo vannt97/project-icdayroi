@@ -29,4 +29,9 @@ public class UserServicesImp implements UserServices{
             return userRepository.save(userEntity).getId();
         }
     }
+
+    @Override
+    public UserEntity get1User(int id) {
+        return userRepository.findById(id);
+    }
 }

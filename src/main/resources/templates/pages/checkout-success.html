@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="index :: index_head"></div>
+    <title>IC ĐÂY RỒI - CẢM ƠN</title>
+    <link rel="stylesheet" th:href="@{~/css/pages/checkout-success.css}"/>
+
+</head>
+<body>
+
+<section id="checkout-success">
+    <div class="container text-black">
+        <div class="row">
+            <div class="col-12 mb-3 text-center text-lg-start">
+                <a href="/" class="pt-3 d-inline-block">
+                    <img th:src="@{~/images/brand_logo.webp}" alt="logo"/>
+                </a>
+            </div>
+            <div class="col-lg-8 col-12 mb-3">
+                <div class="d-flex mb-3 flex-column flex-lg-row align-items-center">
+                    <img class="img-wh-70 me-3 color-filter-green mb-3 mb-lg-0" th:src="@{~/images/check-success.png}" alt="logo"/>
+                    <div class="text-lg-start text-center">
+                        <p class="mb-1 text-black "><b>Cảm ơn bạn đã đặt hàng</b></p>
+                        <p>Một email xác nhận đã gửi tới <span th:utext="${infoUser.email}"></span>. <br>
+                            Xin vui lòng kiểm tra email của bạn
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-1 p-3 mb-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="fs-3">Thông tin mua hàng</p>
+                            <p th:utext="${infoUser.name}"></p>
+                            <p th:utext="${infoUser.email}"></p>
+                            <p th:utext="${infoUser.phone}"></p>
+                        </div>
+                        <div class="col-6">
+                            <p class="fs-3">Địa chỉ nhận hàng</p>
+                            <p th:utext="${infoUser.name}"></p>
+                            <p th:utext="${infoUser.address}"></p>
+                            <p th:utext="${infoUser.province}"></p>
+                            <p th:utext="${infoUser.phone}"></p>
+                        </div>
+                        <div class="col-6">
+                            <p class="fs-3">Phương thức thanh toán</p>
+                            <p th:utext="${payment}"></p>
+
+                        </div>
+                        <div class="col-6">
+                            <p class="fs-3">Phương thức vận chuyển</p>
+                            <p th:utext="${delivery}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end d-none d-lg-block">
+                    <a class="btn btn-primary" href="/">Tiếp tục mua hàng</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12 mb-3">
+                <div class="bg-white border border-1">
+                    <p class="m-0 p-3 border-bottom border-1" th:utext="${'Đơn hàng #' + {bill.id}}">Đơn hàng #57798</p>
+                    <ul class="m-0 checkout-success-list border-bottom border-1">
+                        <li th:each="product : ${bill.billProductEntities}">
+                            <div>
+                                <img th:src="@{'/images/' + ${product.productEntity.img}}" alt="product">
+                                <span th:utext="${product.amount}"></span>
+                            </div>
+                            <p class="m-0" th:utext="${product.productEntity.name}">
+                            </p>
+                            <span th:utext="${#numbers.formatDecimal(product.productEntity.price,0,'POINT',0,'POINT') + ' đ'}" class="text-end">59.000đ</span>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex justify-content-between pt-3 px-3 ">
+                        <span>Tạm tính</span>
+<!--                        <span th:utext="${#aggregates.sum(bill.billProductEntities.![amount * productEntity.price])} "></span>-->
+                        <span th:utext="${#numbers.formatDecimal(#aggregates.sum(bill.billProductEntities.![amount * productEntity.price]),0,'POINT',0,'POINT') + ' đ'}" ></span>
+
+                    </div>
+                    <div class="d-flex justify-content-between p-3 border-bottom border-1">
+                        <span>
+                            Phí vận chuyển
+                        </span>
+                        <span th:if="${bill.delivery} == 'giao_hang_tan_noi'" th:utext="${#numbers.formatDecimal(bill.deliveryPrice,0,'POINT',0,'POINT') + ' đ'}"></span>
+                        <span th:if="${bill.delivery} == 'nhan_tai_cua_hang'">Miễn phí</span>
+                    </div>
+                    <div class="d-flex justify-content-between p-3">
+                        <span>Tổng cộng</span>
+                        <span th:utext="${#numbers.formatDecimal(#aggregates.sum(bill.billProductEntities.![amount * productEntity.price]) + bill.deliveryPrice ,0,'POINT',0,'POINT') + ' đ'}" ></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-block d-lg-none text-center mb-5">
+                <a class="btn btn-primary" href="/">Tiếp tục mua hàng</a>
+            </div>
+        </div>
+    </div>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+<!--<script th:src="@{~/js/pages/checkout.js}"></script>-->
+</body>
+</html>
