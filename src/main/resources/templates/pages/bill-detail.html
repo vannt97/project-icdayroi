@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <div th:replace="index :: index_head"></div>
+  <!--  css  -->
+  <title>Bill detail</title>
+  <!--    <link rel="stylesheet" th:href="@{~/css/components/products.css}"/>-->
+<!--  <link rel="stylesheet" th:href="@{~/css/pages/info-user.css}"/>-->
+  <script th:inline="javascript">
+    var infoUser = JSON.parse(localStorage.getItem("user"));
+    if(!infoUser){
+      window.location.href="/signin";
+    }
+  </script>
+</head>
+<body>
+<section th:replace="index :: index_body">
+  <section id="bill-detail" class="pb-3" th:fragment="content_index (type)" th:remove="${type}">
+    <div class="container text-black">
+      <div id="bill-detail-loading" class="loading mx-auto"></div>
+      <div class="row" id="bill-detail-table">
+      </div>
+    </div>
+  </section>
+</section>
+<th:block th:insert="~{index :: body/div}"></th:block>
+<th:block th:insert="~{index :: body/script}"></th:block>
+<script th:src="@{~/js/pages/bill-detail.js}"></script>
+
+</body>
+</html>

@@ -161,3 +161,23 @@ function handleSearch(e,nameClass){
 }
 //
 renderCartPopup();
+
+function handleClickSignOut(){
+    localStorage.setItem("user",null);
+    localStorage.setItem("dataToken",null);
+    window.location.href = '/';
+}
+
+function renderUserIcon(){
+    let dataUser = JSON.parse(localStorage.getItem("user"))
+    if(dataUser){
+        $("#header-sign-in").attr("href","/user");
+        $("#header-sign-in").html(`
+            <i class="fa-solid fa-circle-user"></i>
+                            <span>Tài khoản</span>
+        `)
+        $("#header-sign-out").attr("hidden",false);
+    }
+}
+
+renderUserIcon()

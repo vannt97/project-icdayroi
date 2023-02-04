@@ -8,8 +8,12 @@ import com.vannt.projecticdayroi.entity.UserEntity;
 import com.vannt.projecticdayroi.model.BillProductModel;
 import com.vannt.projecticdayroi.repository.BillRepository;
 import com.vannt.projecticdayroi.repository.ProductRepository;
+import com.vannt.projecticdayroi.repository.UserRepository;
 import com.vannt.projecticdayroi.uliti.ConvertObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,9 +35,12 @@ public class BillServicesImp implements BillServices{
     @Autowired
     ProductRepository productRepository;
 
-    @Override
-    public List<BillEntity> getAllBill() {
+    @Autowired
+    UserRepository userRepository;
 
+    @Override
+    @Cacheable("all_bill")
+    public List<BillEntity> getAllBill() {
         List<BillEntity> list = billRepository.findAll();
         return list;
     }
@@ -78,5 +85,31 @@ public class BillServicesImp implements BillServices{
         return billRepository.findById(uuid);
     }
 
+    @Override
+    public Page<BillEntity> getAllBill(int page, int size) {
+        Pageable paging = PageRequest.of(page,size);
+        Page<BillEntity> billEntityPage = billRepository.findAll(paging);
+        return billEntityPage;
+    }
 
+    @Override
+    public Slice<BillEntity> getAllBillSlice(int page, int size) {
+        Pageable paging = PageRequest.of(page,size);
+        Slice<BillEntity> billEntityPage = billRepository.findAll(paging);
+        return billEntityPage;
+    }
+
+    @Override
+    public Page<BillEntity> getAllBillByUser(String email, int page, int size) {
+        UserEntity userEntity = userRepository.findByEmail(email);
+        Pageable paging = PageRequest.of(page,size, Sort.by("createAt").descending());
+        Page<BillEntity> billEntityPage = billRepository.findByIdUser(paging,userEntity.getId());
+        return billEntityPage;
+    }
+
+    @Override
+    @CacheEvict(value = "all_bill", allEntries = true)
+    public void clearCacheAllBill() {
+
+    }
 }

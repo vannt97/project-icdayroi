@@ -21,3 +21,39 @@ function topFunction() {
 function formatCurrency(price){
     return String(price).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
+
+function refreshToken(data){
+    postApi("refesh-token",JSON.stringify({token: data}),(res)=>{
+        localStorage.setItem("dataToken", JSON.stringify(res.data))
+    })
+}
+function executeToken(){
+    let dataUser = JSON.parse(localStorage.getItem("user"));
+    if(!dataUser) return;
+    let dataToken = JSON.parse(localStorage.getItem("dataToken"));
+    let refresh_token = dataToken.refeshToken;
+    let jwt = dataToken.token;
+    let tokens = jwt.split(".");
+    let expToken = JSON.parse(window.atob(tokens[1])).exp;
+    let tokenNow = new Date(expToken * 1000); //1000 => minisecond
+    var timeNow = new Date();
+    var timeRemains = Math.floor(
+        Math.abs(tokenNow.getTime() - timeNow.getTime()) / (1000 * 60)
+    );
+    console.log("tokenNow",tokenNow);
+    console.log("timeNow ", timeNow);
+    console.log("timeRemains ", timeRemains);
+
+    if (timeRemains <= 10) {
+        //refresh Token
+        console.log("refresh token ", timeRemains);
+        refreshToken({token: refresh_token});
+        return;
+    }
+    if (tokenNow.getTime() - timeNow.getTime() < 0) {
+        localStorage.setItem("dataToken",null);
+        localStorage.setItem("user",null);
+    }
+}
+
+executeToken();

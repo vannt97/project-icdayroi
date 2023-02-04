@@ -15,14 +15,14 @@ public class LoginController {
     @RequestMapping("/signin")
     public String signin(Model model){
         model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
-
+        model.addAttribute("searchName", "Đăng nhập tài khoản");
         return "pages/sign-in";
     }
 
     @RequestMapping("/signup")
     public String signup(Model model){
         model.addAttribute("typeProducts",typeProductServices.getAllTypeProducts());
-
+        model.addAttribute("searchName", "Đăng ký tài khoản");
         return "pages/sign-up";
     }
 }

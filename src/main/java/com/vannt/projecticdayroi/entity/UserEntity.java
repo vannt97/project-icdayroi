@@ -1,6 +1,9 @@
 package com.vannt.projecticdayroi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "user")
 public class UserEntity {
@@ -21,6 +24,18 @@ public class UserEntity {
     private String password;
 
     private String province;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "userEntity",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private Set<BillEntity> billEntities;
+
+    public Set<BillEntity> getBillEntities() {
+        return billEntities;
+    }
+
+    public void setBillEntities(Set<BillEntity> billEntities) {
+        this.billEntities = billEntities;
+    }
 
     public String getProvince() {
         return province;

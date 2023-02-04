@@ -1,5 +1,6 @@
 package com.vannt.projecticdayroi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -42,6 +43,19 @@ public class BillEntity {
 
     public void setDeliveryPrice(long deliveryPrice) {
         this.deliveryPrice = deliveryPrice;
+    }
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_user",insertable = false,updatable = false)
+    private UserEntity userEntity;
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     @OneToMany(mappedBy = "billEntity", cascade = CascadeType.PERSIST)

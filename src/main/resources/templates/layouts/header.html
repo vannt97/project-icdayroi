@@ -20,7 +20,7 @@
     </div>
     <div class="header-main">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12 col-md-3">
                     <a class="header-main-left" href="/">
                         <img th:src="@{~/images/brand_logo.webp}" alt="logo-icdauroi"/>
@@ -29,7 +29,7 @@
                 <div class="d-none d-md-block col-7 col-md-5 col-lg-6">
                     <div class="header-main-center">
                         <p>Arduino, module, nguồn, cảm biến, ic...</p>
-                        <form action="/search-product">
+                        <form action="/search-product" class="m-0">
                             <div>
                                 <input name="name" id="header-main-center-search" placeholder="Nhập từ khóa tìm kiếm">
                                 <button id="btn-header-search" class="btn-bg-blue">Tìm kiếm</button>
@@ -41,11 +41,15 @@
                 </div>
                 <div class="d-none d-md-block col-2 col-md-4 col-lg-3">
                     <div class="header-main-right">
-                        <a href="/signin">
+                        <a onclick="handleClickSignOut()" href="#" hidden id="header-sign-out">
+                            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+                            <span>Đăng Xuất</span>
+                        </a>
+                        <a id="header-sign-in" href="/signin">
                             <i class="fa-solid fa-circle-user"></i>
                             <span>Đăng nhập</span>
                         </a>
-                        <div class="cart-header-wrapper">
+                        <div class="cart-headerất-wrapper">
                             <a href="/cart" class="cart-header">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span>Giỏ hàng</span>
