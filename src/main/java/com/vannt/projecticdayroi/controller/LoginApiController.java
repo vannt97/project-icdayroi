@@ -23,6 +23,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class LoginApiController {
 
 
     @PostMapping(value = "/signin")
-    public ResponseEntity<?> signIn1(@RequestBody SigninRequest signinRequest) throws JsonProcessingException {
+    public ResponseEntity<?> signIn1( @RequestBody SigninRequest signinRequest) throws JsonProcessingException {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(signinRequest.getEmail(),signinRequest.getPassword());
         Authentication auth = authenticationManager.authenticate(authenticationToken);

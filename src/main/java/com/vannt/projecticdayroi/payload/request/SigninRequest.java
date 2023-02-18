@@ -1,6 +1,8 @@
 package com.vannt.projecticdayroi.payload.request;
 
 
+import javax.validation.constraints.NotBlank;
+
 public class SigninRequest {
     private String email;
     private String password;

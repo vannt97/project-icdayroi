@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public interface BillServices {
-    public List<BillEntity> getAllBill();
+    public List<BillEntity> getAllBill() throws JsonProcessingException;
 
     public BillEntity saveBill(BillDTO billDTO, int  id) throws Exception;
 

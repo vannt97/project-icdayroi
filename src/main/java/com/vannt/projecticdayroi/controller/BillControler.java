@@ -4,6 +4,7 @@ import com.vannt.projecticdayroi.dto.BillDTO;
 import com.vannt.projecticdayroi.dto.UserDTO;
 import com.vannt.projecticdayroi.entity.BillEntity;
 import com.vannt.projecticdayroi.entity.UserEntity;
+import com.vannt.projecticdayroi.exception.DeviceZeroException;
 import com.vannt.projecticdayroi.jwt.JwtTokenHelper;
 import com.vannt.projecticdayroi.model.SubjectDataModel;
 import com.vannt.projecticdayroi.payload.request.RequestBill;
@@ -40,6 +41,11 @@ public class BillControler {
 
     @GetMapping(value = "/bills")
     public ResponseEntity<?> findALlBill(){
+//        try{
+//            int i = 2/0;
+//        }catch (Exception e){
+//            throw new DeviceZeroException(e.getMessage());
+//        }
         try{
             return new ResponseEntity<List<BillEntity>>(billServices.getAllBill(), HttpStatus.OK);
         }catch (Exception e){
